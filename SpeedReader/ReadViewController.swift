@@ -49,7 +49,7 @@ class ReadViewController: NSViewController {
             arrayText = arrayText.filter {
                 $0 != ""
             }
-            print("arrayText: \(arrayText)")
+//            print("arrayText: \(arrayText)")
             DispatchQueue.global(qos: .background).async {
                 // 60 least
                 usleep(self.readingSpeed)
