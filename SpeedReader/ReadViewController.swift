@@ -15,16 +15,22 @@ class ReadViewController: NSViewController {
     var readingSliderValue: Float = 1.0
     var readingSpeed: UInt32 = 60
     let ms = 1000
-
+    var fontName: String = "System Font"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
 //        self.view.layer?.backgroundColor = NSColor.white.cgColor
         self.displayLabel.stringValue = ""
+        if fontName == "System Font" {
+            self.displayLabel.font = NSFont.systemFont(ofSize: 21.0)
+        } else {
+            self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
+        }
     }
     
     override func viewDidAppear() {
+        self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
         startReading()
     }
     
@@ -32,14 +38,18 @@ class ReadViewController: NSViewController {
         if (readingSliderValue <= 0) {
             readingSliderValue = 0.01
         }
-        readingSpeed = UInt32(60.0/readingSliderValue) * UInt32(ms)
+        readingSpeed = UInt32(10.0/readingSliderValue) * UInt32(ms)
         
     }
     
     func startReading() {
         calculateReadingSpeed()
         if let text = textToRead {
-            let arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
+            var arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
+            arrayText = arrayText.filter {
+                $0 != ""
+            }
+            print("arrayText: \(arrayText)")
             DispatchQueue.global(qos: .background).async {
                 // 60 least
                 usleep(self.readingSpeed)

@@ -20,11 +20,17 @@ class SettingsViewController: NSViewController {
     
     
     var detailWindow: ReadDetailWindow?
-
+    var allFontNames: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
-
+        
+        allFontNames = NSFontManager.shared().availableFontFamilies
+        
+        fontPopUp.removeAllItems()
+        fontPopUp.addItem(withTitle: "System Font")
+        fontPopUp.addItems(withTitles: allFontNames)
 //        self.view.layer?.backgroundColor = NSColor.white.cgColor
         // Do any additional setup after loading the view.
     }
@@ -45,6 +51,9 @@ class SettingsViewController: NSViewController {
         if let readVC = detailWindow?.contentViewController as? ReadViewController {
             readVC.readingSliderValue = speedSlider.floatValue
             readVC.textToRead = contentTextView.string
+            if let fontName = fontPopUp.selectedItem?.title {
+                readVC.fontName = fontName
+            }
         }
         detailWindow?.showWindow(self)
     }

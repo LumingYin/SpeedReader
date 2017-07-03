@@ -809,7 +809,7 @@ Good luck!</mutableString>
                             </button>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bly-FF-9Z4">
                                 <rect key="frame" x="72" y="21" width="195" height="19"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="IMv-FB-A0u"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="IMv-FB-A0u"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-1v-uYD">
                                 <rect key="frame" x="18" y="22" width="43" height="17"/>
@@ -828,8 +828,8 @@ Good luck!</mutableString>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXm-5k-eMl">
-                                <rect key="frame" x="18" y="422" width="82" height="24"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Content" id="atw-xD-SYc">
+                                <rect key="frame" x="18" y="422" width="232" height="24"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed Reading Content" id="atw-xD-SYc">
                                     <font key="font" metaFont="systemBold" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -850,9 +850,9 @@ Good luck!</mutableString>
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-7G-FAZ">
-                                <rect key="frame" x="18" y="46" width="67" height="14"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preferences" id="KSY-vW-61z">
-                                    <font key="font" metaFont="system" size="11"/>
+                                <rect key="frame" x="18" y="46" width="150" height="14"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed Reading Preferences" id="KSY-vW-61z">
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
