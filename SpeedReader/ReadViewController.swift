@@ -70,5 +70,4 @@ class ReadViewController: NSViewController {
         }
     }
     
-    
 }
