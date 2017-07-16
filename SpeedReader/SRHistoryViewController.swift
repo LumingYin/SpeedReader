@@ -26,16 +26,25 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
                 let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastUpdated", ascending: false)]
                 articles = try context.fetch(fetchRequest)
+                if tableView != nil {
+                    tableView.reloadData()
+                    if articles.count > 0 {
+                        let indexSet = NSIndexSet(index: 0)
+                        tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
+                        hideOnboardingExperience()
+                    }
+                }
             } catch {
                 print("Fetch article failed")
             }
         }
-        if tableView != nil {
-            tableView.reloadData()
-            if articles.count > 0 {
-                let indexSet = NSIndexSet(index: 0)
-                tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
-            }
+    }
+    
+    override func viewWillAppear() {
+        if articles.count > 0 {
+            let indexSet = NSIndexSet(index: 0)
+            tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
+            hideOnboardingExperience()
         }
     }
     
@@ -124,6 +133,13 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func hideOnboardingExperience() {
+        if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+            articleVC.guidanceView.isHidden = true
+            articleVC.outerTextScrollView.isHidden = false
+        }
+        if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+            preferenceVC.tableView.reloadData()
+        }
         if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
             mainWindow.readButton.isEnabled = true
         }
