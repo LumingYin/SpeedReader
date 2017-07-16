@@ -1256,7 +1256,7 @@ Good luck!</mutableString>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
                                                                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLz-xH-mPB">
-                                                                            <rect key="frame" x="16" y="58" width="18" height="17"/>
+                                                                            <rect key="frame" x="15" y="65" width="18" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="disclosureTriangle" bezelStyle="disclosure" image="buttonCell:cw8-38-dEw:image" imagePosition="left" alignment="left" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cw8-38-dEw">
                                                                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
@@ -1267,7 +1267,7 @@ Good luck!</mutableString>
                                                                             </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EV-5X-Ir9">
-                                                                            <rect key="frame" x="35" y="57" width="200" height="21"/>
+                                                                            <rect key="frame" x="35" y="58" width="200" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="bevel" title="Speed" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="RI1-cf-ruB">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
@@ -1427,7 +1427,7 @@ Good luck!</mutableString>
                                                                             </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jEP-qi-Yr9">
-                                                                            <rect key="frame" x="34" y="85" width="200" height="32"/>
+                                                                            <rect key="frame" x="35" y="84" width="200" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="bevel" title="Focus Appearance" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="b7O-ek-djM">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
@@ -1484,7 +1484,7 @@ Good luck!</mutableString>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-Mv-4xg">
-                                                                            <rect key="frame" x="35" y="36" width="200" height="32"/>
+                                                                            <rect key="frame" x="35" y="35" width="200" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="bevel" title="Content Language" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="cyv-qD-J7N">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
@@ -1521,7 +1521,7 @@ Good luck!</mutableString>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
                                                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ij-oa-0rK">
-                                                                            <rect key="frame" x="22" y="15" width="206" height="25"/>
+                                                                            <rect key="frame" x="22" y="12" width="206" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="XAR-w1-X7W">
                                                                                 <font key="font" metaFont="system"/>
@@ -1538,7 +1538,7 @@ Good luck!</mutableString>
                                                                             </connections>
                                                                         </segmentedControl>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-mv-nOE">
-                                                                            <rect key="frame" x="35" y="36" width="200" height="32"/>
+                                                                            <rect key="frame" x="35" y="35" width="200" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="bevel" title="Words Per Roll" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="Aqo-MT-TM1">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
@@ -1582,6 +1582,10 @@ Good luck!</mutableString>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
+                                                                </tableCellView>
+                                                                <tableCellView identifier="EmptyCellView" id="s8T-SH-xh6" userLabel="read" customClass="SRReadCellView" customModule="SpeedReader" customModuleProvider="target">
+                                                                    <rect key="frame" x="1" y="468" width="247" height="64"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>

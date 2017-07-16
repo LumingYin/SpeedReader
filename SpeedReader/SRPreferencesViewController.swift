@@ -36,23 +36,25 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var identifier = "SpeedCellView"
         switch row {
         case 0:
-            identifier = "SpeedCellView"
+            identifier = "EmptyCellView"
         case 1:
-            identifier = "FontCellView"
+            identifier = "SpeedCellView"
         case 2:
-            identifier = "AppearanceCellView"
+            identifier = "FontCellView"
         case 3:
-            identifier = "LanguageCellView"
+            identifier = "AppearanceCellView"
         case 4:
-            identifier = "WordsCellView"
+            identifier = "LanguageCellView"
         case 5:
+            identifier = "WordsCellView"
+        case 6:
             identifier = "ReadCellView"
         default:
             identifier = "SpeedCellView"
@@ -67,16 +69,19 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         if (row == 0) {
-            return collapseSpeed ? 25: 79+10
-        } else if (row == 1) {
-            return collapseFont ? 25: 95+10
+            return 10;
+        }
+        else if (row == 1) {
+            return collapseSpeed ? 20: 79+10
         } else if (row == 2) {
-            return collapseAppearance ? 25: 105+10
+            return collapseFont ? 20: 95+10
         } else if (row == 3) {
-            return collapseLanguage ? 25: 56+10
+            return collapseAppearance ? 20: 105+10
         } else if (row == 4) {
-            return collapseWords ? 25: 56+10
+            return collapseLanguage ? 20: 56+10
         } else if (row == 5) {
+            return collapseWords ? 20: 56+10
+        } else if (row == 6) {
             return 75
         } else {
             return 95
