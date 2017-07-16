@@ -93,6 +93,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     
     func updateToReflectArticle() {
         if article != nil {
+            tableView.reloadData()
         }
     }
 }

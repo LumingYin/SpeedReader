@@ -63,6 +63,29 @@ class SRFontCellView: SRGeneralPrefCellView {
         fontSizeComboBox.removeAllItems()
         fontSizeComboBox.addItems(withObjectValues: allFontSizes)
         fontSizeComboBox.selectItem(at: 2)
+        
+        if let chosenFont = self.delegate?.article?.preference?.font as? NSFont {
+            Swift.print("\(chosenFont)")
+            if let familyName = chosenFont.familyName {
+                if familyName.contains(".SF") {
+                    fontNamePopUp.selectItem(withTitle: "System Font")
+                } else {
+                    fontNamePopUp.selectItem(withTitle: familyName)
+                }
+                if let displayName = chosenFont.displayName {
+                    if let range = displayName.range(of: familyName) {
+                        let endPos = displayName.distance(from: displayName.startIndex, to: range.upperBound)
+                        let offsetIndex = endPos.advanced(by: 1)
+                        if displayName.characters.count > endPos {
+                            let variant = displayName.substring(from: displayName.index(displayName.startIndex, offsetBy: offsetIndex))
+                            fontSubFamilyPopUp.selectItem(withTitle: variant)
+                        }
+
+                    }
+                }
+            }
+            fontSizeComboBox.selectItem(withObjectValue: chosenFont.pointSize)
+        }
     }
     
     func updateSubFamily() {
@@ -89,6 +112,8 @@ class SRFontCellView: SRGeneralPrefCellView {
             let floatSize = CGFloat(n)
             if let desiredFont = NSFont.init(name: fontPostScriptArray[fontSubFamilyPopUp.indexOfSelectedItem], size: floatSize) {
                 self.delegate?.font = desiredFont
+                self.delegate?.article?.preference?.font = desiredFont
+                (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
             }
         }
     }

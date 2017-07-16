@@ -8,6 +8,7 @@
         <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Preference" inverseName="article" inverseEntity="Preference" syncable="YES"/>
     </entity>
     <entity name="Preference" representedClassName="Preference" syncable="YES" codeGenerationType="class">
+        <attribute name="font" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="fontFamily" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fontSize" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isDark" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -18,6 +19,6 @@
     </entity>
     <elements>
         <element name="Article" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Preference" positionX="-54" positionY="0" width="128" height="150"/>
+        <element name="Preference" positionX="-54" positionY="0" width="128" height="165"/>
     </elements>
 </model>

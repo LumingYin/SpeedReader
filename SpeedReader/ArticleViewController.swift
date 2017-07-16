@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ArticleViewController: NSViewController {
+class ArticleViewController: NSViewController, NSTextViewDelegate {
     var article: Article?
     @IBOutlet weak var contentLabel: NSTextField!
     @IBOutlet var contentTextView: NSTextView!
@@ -29,6 +29,7 @@ class ArticleViewController: NSViewController {
         
         allFontNames = NSFontManager.shared().availableFontFamilies
         contentTextView.textContainerInset = NSSize(width: 20.0, height: 20.0)
+        contentTextView.delegate = self
     }
 
     override var representedObject: Any? {
@@ -40,6 +41,11 @@ class ArticleViewController: NSViewController {
         if article != nil {
             self.contentTextView.string = article?.content
         }
+    }
+    
+    func textDidChange(_ notification: Notification) {
+        article?.content = contentTextView.string
+        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
     }
 
 }

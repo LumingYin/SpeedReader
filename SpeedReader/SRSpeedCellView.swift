@@ -21,6 +21,8 @@ class SRSpeedCellView: SRGeneralPrefCellView {
     
     @IBAction func speedChanged(_ sender: NSSlider) {
         delegate?.speed = sender.floatValue
+        delegate?.article?.preference?.speed = sender.floatValue
+        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func collapse(_ sender: NSButton) {
@@ -39,7 +41,9 @@ class SRSpeedCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
-        
+        if let speed = delegate?.article?.preference?.speed {
+            slider.floatValue = speed
+        }
     }
 
     
