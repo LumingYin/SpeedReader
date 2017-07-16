@@ -932,6 +932,7 @@
                     </view>
                     <connections>
                         <outlet property="displayLabel" destination="BWH-iC-9Lp" id="3W8-xL-WmI"/>
+                        <outlet property="visualEffectView" destination="zs4-Dj-5VI" id="5yz-h8-hDU"/>
                     </connections>
                 </viewController>
                 <customObject id="Jb5-yr-j6G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

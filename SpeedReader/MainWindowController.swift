@@ -51,6 +51,7 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
                         readVC.readingSliderValue = prefVC.speed
                         readVC.textToRead = textVC.contentTextView.string
                         readVC.font = prefVC.font
+                        readVC.enableDark = prefVC.enableDark
                     }
                     detailWindow?.showWindow(self)
                 }
@@ -60,7 +61,15 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
 
     
     @IBAction func shareClicked(_ sender: NSView) {
-        let sharePicker = NSSharingServicePicker.init(items: ["Demo"])
+        var shareArray: [String] = []
+        if let contentVC = self.contentViewController as? SRSplitViewController {
+            if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
+                if let article = textVC.contentTextView.string {
+                    shareArray.append(article)
+                }
+            }
+        }
+        let sharePicker = NSSharingServicePicker.init(items: shareArray)
         sharePicker.delegate = self
         sharePicker.show(relativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.minY)
         

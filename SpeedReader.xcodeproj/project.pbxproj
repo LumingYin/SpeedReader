@@ -83,21 +83,21 @@
 		3741C1B71F0A873F004E9BE0 /* SpeedReader */ = {
 			isa = PBXGroup;
 			children = (
-				5697271C1F15EA56007749AA /* AppIcon.icns */,
-				5697271B1F15E655007749AA /* SpeedReader.entitlements */,
-				3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */,
 				3741C1BE1F0A873F004E9BE0 /* Main.storyboard */,
 				3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */,
+				569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */,
+				569B21C41F1B5B6400D5552C /* SRHistoryViewController.swift */,
+				3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */,
+				569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */,
 				569B21D61F1B6A4300D5552C /* TableCellViews */,
 				569B21C61F1B65F300D5552C /* SRNewArticleViewController.swift */,
-				569B21C41F1B5B6400D5552C /* SRHistoryViewController.swift */,
 				3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */,
-				3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */,
-				569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */,
-				569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */,
 				3741C1C71F0A89E0004E9BE0 /* ReadDetailWindow.swift */,
 				3741C1C11F0A873F004E9BE0 /* Info.plist */,
 				569B21BC1F1B3C0700D5552C /* Images.xcassets */,
+				5697271C1F15EA56007749AA /* AppIcon.icns */,
+				5697271B1F15E655007749AA /* SpeedReader.entitlements */,
+				3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */,
 			);
 			path = SpeedReader;
 			sourceTree = "<group>";

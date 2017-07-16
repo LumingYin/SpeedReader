@@ -22,6 +22,17 @@ class SRLanguageCellView: SRGeneralPrefCellView {
     }
     
     @IBAction func contentLanguageChanged(_ sender: NSPopUpButton) {
+                if let article = delegate?.parent?.childViewControllers[1] as? SpeedReader.ArticleViewController {
+                    var text = article.contentTextView.string
+                    var tagSchemes = [NSLinguisticTagSchemeLanguage]
+                    var tagger = NSLinguisticTagger.init(tagSchemes: tagSchemes, options: 0)
+                    tagger.string = text
+                    var pointer: NSRangePointer?
+                    var range: NSRangePointer?
+                    var language = tagger.tag(at: 0, scheme: NSLinguisticTagSchemeLanguage, tokenRange: pointer, sentenceRange: range)
+                    print("language is likely \(language)")
+                }
+
     }
     
     @IBAction func collapse(_ sender: NSButton) {
@@ -37,6 +48,15 @@ class SRLanguageCellView: SRGeneralPrefCellView {
             delegate.collapseLanguage = !(delegate.collapseLanguage)
             delegate.updateHeight()
         }
+    }
+    
+    //    NSArray *tagschemes = [NSArray arrayWithObjects:NSLinguisticTagSchemeLanguage, nil];
+    //    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagschemes options:0];
+    //    [tagger setString:@"Das ist ein bisschen deutscher Text. Bitte löschen Sie diesen nicht."];
+    //    NSString *language = [tagger tagAtIndex:0 scheme:NSLinguisticTagSchemeLanguage tokenRange:NULL sentenceRange:NULL];
+
+    
+    override func configure() {
     }
 
 }

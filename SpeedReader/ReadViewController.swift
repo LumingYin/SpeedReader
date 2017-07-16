@@ -15,8 +15,11 @@ class ReadViewController: NSViewController {
     var readingSliderValue: Float = 1.0
     var readingSpeed: UInt32 = 60
     let ms = 1000
-    var fontName: String = "System Font"
     var font: NSFont?
+    var enableDark: Bool = false
+
+    
+    @IBOutlet weak var visualEffectView: NSVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,17 @@ class ReadViewController: NSViewController {
         if let _ = font {
             self.displayLabel.font = font
         }
-//        if fontName == "System Font" {
-//            self.displayLabel.font = NSFont.systemFont(ofSize: 21.0)
-//        } else {
-//            self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
-//        }
+    }
+    
+    override func viewWillAppear() {
+        if enableDark {
+            visualEffectView.material = .dark
+            self.displayLabel.textColor = NSColor.white
+        } else {
+            visualEffectView.material = .light
+            self.displayLabel.textColor = NSColor.black
+
+        }
     }
     
     override func viewDidAppear() {

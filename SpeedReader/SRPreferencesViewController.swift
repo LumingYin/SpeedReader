@@ -13,7 +13,12 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     @IBOutlet weak var tableView: NSTableView!
     
     var speed: Float = 0.1
-    var font: NSFont = NSFont.systemFont(ofSize: 12.0)
+    var font: NSFont = NSFont.systemFont(ofSize: 24.0)
+    var enableDark: Bool = false
+    var increaseContrast = false
+    var reduceTransparency = false
+    var wordsPerRoll = 1
+    var contentLanguage = "en_US"
     
     var collapseSpeed: Bool = false
     var collapseFont: Bool = false

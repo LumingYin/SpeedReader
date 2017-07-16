@@ -46,10 +46,6 @@ class ArticleViewController: NSViewController {
 //        openNewWindow()
 //    }
     
-//    NSArray *tagschemes = [NSArray arrayWithObjects:NSLinguisticTagSchemeLanguage, nil];
-//    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagschemes options:0];
-//    [tagger setString:@"Das ist ein bisschen deutscher Text. Bitte löschen Sie diesen nicht."];
-//    NSString *language = [tagger tagAtIndex:0 scheme:NSLinguisticTagSchemeLanguage tokenRange:NULL sentenceRange:NULL];
 
 
     

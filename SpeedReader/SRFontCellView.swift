@@ -18,7 +18,7 @@ class SRFontCellView: SRGeneralPrefCellView {
     var fontPostScriptArray: [String] = []
     
     let allFontNames = NSFontManager.shared().availableFontFamilies
-    let allFontSizes = [9, 10, 11, 12, 13, 14, 18, 24, 36, 48, 64, 72, 96]
+    let allFontSizes = [24, 36, 48, 64, 72, 96]
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -62,7 +62,7 @@ class SRFontCellView: SRGeneralPrefCellView {
         updateSubFamily()
         fontSizeComboBox.removeAllItems()
         fontSizeComboBox.addItems(withObjectValues: allFontSizes)
-        fontSizeComboBox.selectItem(at: 5)
+        fontSizeComboBox.selectItem(at: 2)
     }
     
     func updateSubFamily() {

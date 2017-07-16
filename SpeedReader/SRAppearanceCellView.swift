@@ -21,12 +21,27 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
     }
     
     @IBAction func lightDarkChanged(_ sender: NSSegmentedControl) {
+        if sender.selectedSegment == 0 {
+            delegate?.enableDark = false
+        } else {
+            delegate?.enableDark = true
+        }
     }
     
     @IBAction func increaseContrastChanged(_ sender: NSButton) {
+        if sender.state == NSOnState {
+            delegate?.increaseContrast = true
+        } else {
+            delegate?.increaseContrast = false
+        }
     }
     
     @IBAction func reduceTransparencyChanged(_ sender: NSButton) {
+        if sender.state == NSOnState {
+            delegate?.reduceTransparency = true
+        } else {
+            delegate?.reduceTransparency = false
+        }
     }
     
     @IBAction func collapse(_ sender: NSButton) {
