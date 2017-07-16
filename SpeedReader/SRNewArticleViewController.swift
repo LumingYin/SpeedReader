@@ -20,6 +20,7 @@ class SRNewArticleViewController: NSViewController {
             let article:Article = Article(context: context)
             article.typeOfArticle = 0
             article.content = "Paste in an article to get started."
+            article.lastUpdated = Date.init() as NSDate
             
             let preference: Preference = Preference(context: context)
             preference.fontFamily = "System Font"
@@ -36,14 +37,18 @@ class SRNewArticleViewController: NSViewController {
             if let leftVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[0].viewController as? SRHistoryViewController {
                 leftVC.getAllArticles()
             }
+            
+            presenting?.dismissViewController(self)
         }
         print("clicked")
     }
     
     @IBAction func importArticleClicked(_ sender: NSButton) {
         print("clicked")
+        presenting?.dismissViewController(self)
     }
     @IBAction func importURLClicked(_ sender: NSButton) {
         print("clicked")
+        presenting?.dismissViewController(self)
     }
 }

@@ -22,12 +22,16 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     func getAllArticles() {
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
             do {
-                articles = try context.fetch(Article.fetchRequest())
+                let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastUpdated", ascending: false)]
+                articles = try context.fetch(fetchRequest)
             } catch {
                 print("Fetch article failed")
             }
         }
-        tableView.reloadData()
+        if tableView != nil {
+            tableView.reloadData()
+        }
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -36,6 +40,13 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if let view = tableView.make(withIdentifier: "HistoryEntryCell", owner: self) as? SRArticleSnippetCellView {
+            let article = articles[row]
+            if let time = article.lastUpdated {
+                view.articleTime.stringValue = time.description
+            }
+            if let content = article.content {
+                view.articleSummary.stringValue = content
+            }
             return view
         }
         return nil

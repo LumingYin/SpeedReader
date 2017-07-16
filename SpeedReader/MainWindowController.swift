@@ -30,12 +30,14 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     }
     
     @IBAction func addClicked(_ sender: NSView) {
-        let popover = NSPopover()
+//        let popover = NSPopover()
         if let vc = storyboard?.instantiateController(withIdentifier: "BlankDocument") as? NSViewController {
-            popover.contentViewController = vc
+//            popover.contentViewController = vc
+            self.contentViewController?.presentViewController(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.minY, behavior: .transient)
+
         }
-        popover.behavior = .transient
-        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge:NSRectEdge.minY)
+//        popover.behavior = .transient
+//        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge:NSRectEdge.minY)
     }
     
     @IBAction func readClicked(_ sender: Any) {
