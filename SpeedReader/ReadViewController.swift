@@ -66,7 +66,7 @@ class ReadViewController: NSViewController {
                 $0 != ""
             }
             currentIndexInArray = 0
-            Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { (timer) in
+            Timer.scheduledTimer(withTimeInterval: TimeInterval(1 - readingSliderValue), repeats: true, block: { (timer) in
                 if (self.currentIndexInArray < self.arrayText.count) {
                     self.displayLabel?.stringValue = self.arrayText[self.currentIndexInArray]
                     self.currentIndexInArray = self.currentIndexInArray + 1

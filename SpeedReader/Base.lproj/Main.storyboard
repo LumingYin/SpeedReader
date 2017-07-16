@@ -1448,7 +1448,7 @@ Gw
                                                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-r6-paB">
                                                                             <rect key="frame" x="14" y="27" width="223" height="24"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.5" tickMarkPosition="below" numberOfTickMarks="4" sliderType="linear" id="C90-LE-xer"/>
+                                                                            <sliderCell key="cell" state="on" alignment="left" minValue="0.69999999999999996" maxValue="0.94999999999999996" doubleValue="0.69999999999999996" tickMarkPosition="below" numberOfTickMarks="11" sliderType="linear" id="C90-LE-xer"/>
                                                                             <connections>
                                                                                 <action selector="speedChanged:" target="3PK-ag-AlE" id="1ND-IX-gkw"/>
                                                                             </connections>
