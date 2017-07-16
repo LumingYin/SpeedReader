@@ -50,6 +50,18 @@ class SRNewArticleViewController: NSViewController {
     }
     @IBAction func importURLClicked(_ sender: NSButton) {
         print("clicked")
+        if let webWindow = (storyboard?.instantiateController(withIdentifier: "OpenWebWindow") as? NSWindowController)?.window {
+            NSApp.mainWindow?.beginSheet(webWindow, completionHandler: { (response: NSModalResponse) in
+                print("sheet closed")
+                if (response == NSModalResponseOK) {
+                    if let webImport = webWindow.contentViewController as? SRImportWebViewController {
+                        print("dismissed with url to import: \(webImport.urlLabel)")
+                    }
+                } else if (response == NSModalResponseCancel) {
+                    print("cancelled")
+                }
+            })
+        }
         presenting?.dismissViewController(self)
     }
 }
