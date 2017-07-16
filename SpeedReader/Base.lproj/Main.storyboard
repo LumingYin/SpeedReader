@@ -144,7 +144,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYF-ZQ-B8J">
                                 <rect key="frame" x="73" y="175" width="271" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Create Blank Article" id="hey-tt-P2U">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Create New Article" id="hey-tt-P2U">
                                     <font key="font" metaFont="systemSemibold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -153,7 +153,7 @@ Gw
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-f9-7oz">
                                 <rect key="frame" x="73" y="140" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Create a new blank article, then type or paste in contents to speed read." id="tub-yU-y86">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Create a new article, then type or paste in contents to speed read." id="tub-yU-y86">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1013,6 +1013,7 @@ Gw
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="readButton" destination="5Ve-h4-Bc4" id="ugd-Pp-Vd7"/>
                         <outlet property="shareButton" destination="jEi-r9-8mg" id="wpg-gs-g5J"/>
                         <segue destination="I11-MB-4fm" kind="relationship" relationship="window.shadowedContentViewController" id="m2C-jV-Wf8"/>
                     </connections>
@@ -1395,13 +1396,13 @@ Gw
                             <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="SAO-3Q-999">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                 <subviews>
-                                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="58" horizontalPageScroll="10" verticalLineScroll="58" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-hA-DbU">
+                                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="66" horizontalPageScroll="10" verticalLineScroll="66" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-hA-DbU">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                         <clipView key="contentView" focusRingType="none" id="fJM-bE-Bwf">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="jV8-b8-vTd">
+                                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="64" rowSizeStyle="automatic" viewBased="YES" id="jV8-b8-vTd">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -1760,25 +1761,14 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-la-blm">
-                                                                            <rect key="frame" x="16" y="2" width="100" height="60"/>
+                                                                            <rect key="frame" x="16" y="2" width="214" height="60"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <buttonCell key="cell" type="smallSquare" title="Read Inline" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
+                                                                            <buttonCell key="cell" type="smallSquare" title="Speed Read" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                <font key="font" metaFont="cellTitle"/>
+                                                                                <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
                                                                                 <action selector="readInlineClicked:" target="P4Z-vX-F8d" id="caL-km-qo0"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-ov-lo6">
-                                                                            <rect key="frame" x="136" y="2" width="100" height="60"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <buttonCell key="cell" type="smallSquare" title="Read Focused" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" borderStyle="border" inset="2" id="75q-CO-iJ3">
-                                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                <font key="font" metaFont="cellTitle"/>
-                                                                            </buttonCell>
-                                                                            <connections>
-                                                                                <action selector="readFocusedClicked:" target="P4Z-vX-F8d" id="OJs-uD-ICC"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>

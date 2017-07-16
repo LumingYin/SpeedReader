@@ -14,6 +14,7 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     var detailWindow: ReadDetailWindow?
     var prefVC: SRPreferencesViewController?
 
+    @IBOutlet weak var readButton: NSButton!
     override func windowDidLoad() {
         super.windowDidLoad()
         

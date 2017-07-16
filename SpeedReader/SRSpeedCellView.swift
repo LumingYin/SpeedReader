@@ -40,6 +40,11 @@ class SRSpeedCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
+        if delegate?.article == nil {
+            slider.isEnabled = false
+        } else {
+            slider.isEnabled = true
+        }
         if let speed = delegate?.article?.preference?.speed {
             slider.floatValue = speed
         }

@@ -40,6 +40,11 @@ class SRLanguageCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
+        if delegate?.article == nil {
+            contentLanguagePopUp.isEnabled = false
+        } else {
+            contentLanguagePopUp.isEnabled = true
+        }
         if let language = self.delegate?.article?.content?.guessLanguage() {
             contentLanguagePopUp.removeAllItems()
             contentLanguagePopUp.addItem(withTitle: "Auto Detect (\(language))")

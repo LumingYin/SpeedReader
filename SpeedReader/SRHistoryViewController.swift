@@ -40,6 +40,9 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
+        if articles.count == 0 {
+            showOnboardingExperience()
+        }
         return articles.count
     }
     
@@ -76,10 +79,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         let row = tableView.selectedRow
         print(tableView.selectedRow)
         if row == -1 {
-            if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
-                articleVC.guidanceView.isHidden = false
-                articleVC.outerTextScrollView.isHidden = true
-            }
+            showOnboardingExperience()
             return
         } else {
             let article = articles[row]
@@ -105,5 +105,19 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         }
     }
     
+    func showOnboardingExperience() {
+        if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+            articleVC.article = nil
+            articleVC.guidanceView.isHidden = false
+            articleVC.outerTextScrollView.isHidden = true
+        }
+        if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+            preferenceVC.article = nil
+            preferenceVC.tableView.reloadData()
+        }
+        if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+            mainWindow.readButton.isEnabled = false
+        }
+    }
     
 }

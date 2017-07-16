@@ -22,6 +22,15 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
+        if delegate?.article == nil {
+            increaseContrastBtn.isEnabled = false
+            reduceTransparencyBtn.isEnabled = false
+            lightDarkToggle.isEnabled = false
+        } else {
+            increaseContrastBtn.isEnabled = true
+            reduceTransparencyBtn.isEnabled = true
+            lightDarkToggle.isEnabled = true
+        }
         if let isDark = self.delegate?.article?.preference?.isDark {
             if isDark {
                 lightDarkToggle.selectSegment(withTag: 1)

@@ -22,6 +22,11 @@ class SRWordsCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
+        if delegate?.article == nil {
+            wordsPerRoll.isEnabled = false
+        } else {
+            wordsPerRoll.isEnabled = true
+        }
         if let wordsPref = self.delegate?.article?.preference?.wordsPerRoll {
             wordsPerRoll.selectedSegment = Int(wordsPref - 1)
         }

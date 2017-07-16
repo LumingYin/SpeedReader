@@ -55,6 +55,16 @@ class SRFontCellView: SRGeneralPrefCellView {
     }
     
     override func configure() {
+        if delegate?.article == nil {
+            fontNamePopUp.isEnabled = false
+            fontSizeComboBox.isEnabled = false
+            fontSubFamilyPopUp.isEnabled = false
+        } else {
+            fontNamePopUp.isEnabled = true
+            fontSizeComboBox.isEnabled = true
+            fontSubFamilyPopUp.isEnabled = true
+        }
+
         fontNamePopUp.removeAllItems()
         fontNamePopUp.addItem(withTitle: "System Font")
         fontNamePopUp.addItems(withTitles: allFontNames)
