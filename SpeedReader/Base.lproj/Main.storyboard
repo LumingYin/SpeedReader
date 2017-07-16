@@ -1255,7 +1255,7 @@ Gw
                                 <subviews>
                                     <scrollView wantsLayer="YES" focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH3-bM-7mQ">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="320"/>
-                                        <clipView key="contentView" focusRingType="none" id="F06-Rj-uAJ">
+                                        <clipView key="contentView" focusRingType="none" copiesOnScroll="NO" id="F06-Rj-uAJ">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="320"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1348,13 +1348,23 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3p-dF-2z6">
+                                        <rect key="frame" x="66" y="151" width="69" height="18"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No Article" id="iPB-AM-tis">
+                                            <font key="font" metaFont="system" size="14"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jH3-bM-7mQ" firstAttribute="top" secondItem="XIB-5o-mbO" secondAttribute="top" id="3r2-Wj-ui8"/>
                                     <constraint firstAttribute="trailing" secondItem="jH3-bM-7mQ" secondAttribute="trailing" id="8tG-OQ-i6u"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="SMN-It-m3h"/>
                                     <constraint firstAttribute="bottom" secondItem="jH3-bM-7mQ" secondAttribute="bottom" id="Vjv-nF-Jsd"/>
+                                    <constraint firstItem="m3p-dF-2z6" firstAttribute="centerY" secondItem="XIB-5o-mbO" secondAttribute="centerY" id="df8-FC-Hzh"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="fNN-tq-Pz4"/>
+                                    <constraint firstItem="m3p-dF-2z6" firstAttribute="centerX" secondItem="XIB-5o-mbO" secondAttribute="centerX" id="hcp-ge-k0W"/>
                                     <constraint firstItem="jH3-bM-7mQ" firstAttribute="leading" secondItem="XIB-5o-mbO" secondAttribute="leading" id="v0m-Kf-YRc"/>
                                 </constraints>
                             </customView>
@@ -1368,6 +1378,7 @@ Gw
                     </view>
                     <connections>
                         <outlet property="contextMenu" destination="LiJ-Oo-Hy2" id="D7J-8E-4DE"/>
+                        <outlet property="noContentLabel" destination="m3p-dF-2z6" id="wZj-Bf-xsq"/>
                         <outlet property="tableView" destination="ZID-5q-q1e" id="zGF-cV-wbG"/>
                     </connections>
                 </viewController>

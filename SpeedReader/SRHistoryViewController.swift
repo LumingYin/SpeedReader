@@ -12,6 +12,8 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var tableView: NSTableView!
     var articles:[Article] = []
 
+    @IBOutlet weak var noContentLabel: NSTextField!
+    
     @IBOutlet var contextMenu: NSMenu!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,10 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
                     if articles.count > 0 {
                         let indexSet = NSIndexSet(index: 0)
                         tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
+                        noContentLabel.isHidden = true
                         hideOnboardingExperience()
+                    } else {
+                        noContentLabel.isHidden = false
                     }
                 }
             } catch {
@@ -136,6 +141,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
             articleVC.guidanceView.isHidden = true
             articleVC.outerTextScrollView.isHidden = false
+//            articleVC.contentTextView.string = articleVC.article?.content
         }
         if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
             preferenceVC.tableView.reloadData()
