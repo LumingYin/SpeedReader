@@ -47,6 +47,13 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
             if let content = article.content {
                 view.articleSummary.stringValue = content
             }
+            if article.typeOfArticle == 1 {
+                view.iconView.image = NSImage.init(named: "openLocal")
+            } else if article.typeOfArticle == 2 {
+                view.iconView.image = NSImage.init(named: "openWeb")
+            } else{
+                view.iconView.image = NSImage.init(named: "createNew")
+            }
             return view
         }
         return nil

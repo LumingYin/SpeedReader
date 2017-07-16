@@ -19,10 +19,10 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-a9-pWA">
                                 <rect key="frame" x="20" y="145" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="H75-7c-MTB"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="createNew" id="H75-7c-MTB"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYF-ZQ-B8J">
-                                <rect key="frame" x="76" y="182" width="271" height="18"/>
+                                <rect key="frame" x="73" y="175" width="271" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Create Blank Article" id="hey-tt-P2U">
                                     <font key="font" metaFont="systemSemibold" size="14"/>
@@ -31,7 +31,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-f9-7oz">
-                                <rect key="frame" x="76" y="140" width="271" height="34"/>
+                                <rect key="frame" x="73" y="140" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Create a new blank article, then type or paste in contents to speed read." id="tub-yU-y86">
                                     <font key="font" metaFont="cellTitle"/>
@@ -42,10 +42,10 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6I-0q-ll7">
                                 <rect key="frame" x="18" y="81" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="IKa-JW-WHu"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="openLocal" id="IKa-JW-WHu"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKm-2U-8lN">
-                                <rect key="frame" x="74" y="111" width="271" height="18"/>
+                                <rect key="frame" x="73" y="113" width="271" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Import Local Article" id="joS-yF-VlQ">
                                     <font key="font" metaFont="systemSemibold" size="14"/>
@@ -54,7 +54,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvQ-gs-IJu">
-                                <rect key="frame" x="74" y="76" width="271" height="34"/>
+                                <rect key="frame" x="73" y="76" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Import local Plain Text, Rich Text, Pages or PDF document to speed read." id="QBy-bG-IsE">
                                     <font key="font" metaFont="cellTitle"/>
@@ -65,10 +65,10 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-mD-Ojw">
                                 <rect key="frame" x="18" y="13" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="w3T-tv-6Hn"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="openWeb" id="w3T-tv-6Hn"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDK-TB-qFJ">
-                                <rect key="frame" x="74" y="43" width="271" height="18"/>
+                                <rect key="frame" x="73" y="43" width="271" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Load Web Article" id="DYE-C0-Mch">
                                     <font key="font" metaFont="systemSemibold" size="14"/>
@@ -77,7 +77,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvA-HM-XiE">
-                                <rect key="frame" x="74" y="8" width="271" height="34"/>
+                                <rect key="frame" x="73" y="8" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Import an article by pasting in an URL from the web to speed read." id="aTi-6p-mcQ">
                                     <font key="font" metaFont="cellTitle"/>
@@ -1687,5 +1687,8 @@ ALAAswC1ALcAuQC7AMAA1wDZANsJiwmQCZsJpAm3CbsJxgnPCdQJ3AnfCeQJ8wn3Cf4KBgoTChgKGgoc
 CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
 </mutableData>
         </image>
+        <image name="createNew" width="46.428211212158203" height="46.428211212158203"/>
+        <image name="openLocal" width="46.428211212158203" height="46.428211212158203"/>
+        <image name="openWeb" width="405.09890747070312" height="405.09890747070312"/>
     </resources>
 </document>
