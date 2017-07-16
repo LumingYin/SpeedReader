@@ -885,7 +885,7 @@ Gw
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SpeedReader" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="260" y="-99"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -982,9 +982,27 @@ Gw
                                         </connections>
                                     </segmentedControl>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="BBCE3988-0275-437A-B2D5-EB742FA12690" label="History" paletteLabel="History" id="Qve-Te-AJP">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="44" height="25"/>
+                                    <size key="maxSize" width="46" height="28"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="iST-Fx-F4u">
+                                        <rect key="frame" x="0.0" y="14" width="46" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="vBi-gp-VXK">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSHistoryItem" width="44" selected="YES"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="historySwapped:" target="B8D-0N-5wS" id="wSm-hp-VGi"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="oTY-1I-fG7"/>
+                                <toolbarItem reference="Qve-Te-AJP"/>
                                 <toolbarItem reference="Fbi-K9-qig"/>
                                 <toolbarItem reference="7EB-SM-WLr"/>
                                 <toolbarItem reference="QMV-LG-2aM"/>
@@ -1130,9 +1148,9 @@ Gw
             <objects>
                 <splitViewController id="I11-MB-4fm" customClass="SRSplitViewController" customModule="SpeedReader" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem canCollapse="YES" collapsed="YES" id="Pi0-HO-NhL"/>
+                        <splitViewItem id="Pi0-HO-NhL"/>
                         <splitViewItem id="Gn2-2K-CJA"/>
-                        <splitViewItem canCollapse="YES" id="Htp-Ih-8nc"/>
+                        <splitViewItem id="Htp-Ih-8nc"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="RtU-Te-XDs">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>

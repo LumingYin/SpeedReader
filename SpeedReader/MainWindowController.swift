@@ -94,4 +94,11 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
             spvc.splitViewItems[2].isCollapsed = !spvc.splitViewItems[2].isCollapsed
         }
     }
+    
+    @IBAction func historySwapped(_ sender: NSSegmentedControl) {
+        if let spvc = self.contentViewController as? SRSplitViewController {
+            spvc.splitViewItems[0].isCollapsed = !spvc.splitViewItems[0].isCollapsed
+            sender.setSelected(!spvc.splitViewItems[0].isCollapsed, forSegment: 0)
+        }
+    }
 }

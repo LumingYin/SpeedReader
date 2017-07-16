@@ -16,6 +16,8 @@ class SRSplitViewController: NSSplitViewController {
         // Do view setup here.
     }
     
+    
+    
 //    override func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
 //        return proposedMinimumPosition - 50
 //    }
