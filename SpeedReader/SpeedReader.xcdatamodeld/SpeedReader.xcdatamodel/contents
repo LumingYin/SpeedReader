@@ -4,6 +4,7 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="typeOfArticle" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="webPageTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="webPageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Preference" inverseName="article" inverseEntity="Preference" syncable="YES"/>
     </entity>
@@ -20,7 +21,7 @@
         <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="preference" inverseEntity="Article" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Article" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Article" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Preference" positionX="-54" positionY="0" width="128" height="195"/>
     </elements>
 </model>

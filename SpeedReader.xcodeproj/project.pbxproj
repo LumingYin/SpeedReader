@@ -31,9 +31,11 @@
 		569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D21F1B684300D5552C /* SRReadCellView.swift */; };
 		569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */; };
 		569B21DA1F1BC5D600D5552C /* SpeedReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D71F1BC4A600D5552C /* SpeedReader.xcdatamodeld */; };
+		6A24AC93E577F9ADB263E192 /* Pods_SpeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4636BD1981E30BC85753781B /* Pods_SpeedReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2C08C9A2F325F20F5469ED /* Pods-SpeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReader/Pods-SpeedReader.release.xcconfig"; sourceTree = "<group>"; };
 		3741C1B51F0A873F004E9BE0 /* SpeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		3741C1C71F0A89E0004E9BE0 /* ReadDetailWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadDetailWindow.swift; sourceTree = "<group>"; };
 		3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		4636BD1981E30BC85753781B /* Pods_SpeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRArticleSnippetCellView.swift; sourceTree = "<group>"; };
 		569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRTableRowView.swift; path = ../SRTableRowView.swift; sourceTree = "<group>"; };
 		569724251F1BEBC200D9E7C7 /* SRModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRModalWindowController.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		569B21D21F1B684300D5552C /* SRReadCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRReadCellView.swift; sourceTree = "<group>"; };
 		569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRGeneralPrefCellView.swift; sourceTree = "<group>"; };
 		569B21D81F1BC4A600D5552C /* SpeedReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeedReader.xcdatamodel; sourceTree = "<group>"; };
+		882077CF3D0F18FFAB77F68D /* Pods-SpeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReader/Pods-SpeedReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,17 +72,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A24AC93E577F9ADB263E192 /* Pods_SpeedReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1259B537378C67F201272C9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4636BD1981E30BC85753781B /* Pods_SpeedReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3741C1AC1F0A873F004E9BE0 = {
 			isa = PBXGroup;
 			children = (
 				3741C1B71F0A873F004E9BE0 /* SpeedReader */,
 				3741C1B61F0A873F004E9BE0 /* Products */,
+				9DA12BE2F459B5560F3B2EA4 /* Pods */,
+				1259B537378C67F201272C9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +146,15 @@
 			name = TableCellViews;
 			sourceTree = "<group>";
 		};
+		9DA12BE2F459B5560F3B2EA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				882077CF3D0F18FFAB77F68D /* Pods-SpeedReader.debug.xcconfig */,
+				0A2C08C9A2F325F20F5469ED /* Pods-SpeedReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3741C1C41F0A873F004E9BE0 /* Build configuration list for PBXNativeTarget "SpeedReader" */;
 			buildPhases = (
+				C4D3B7FB0BAD0E3DC811E011 /* [CP] Check Pods Manifest.lock */,
 				3741C1B11F0A873F004E9BE0 /* Sources */,
 				3741C1B21F0A873F004E9BE0 /* Frameworks */,
 				3741C1B31F0A873F004E9BE0 /* Resources */,
+				DBDCA771BBEF2CBC63FBD67A /* [CP] Embed Pods Frameworks */,
+				773E3C18BE44D5C4F7565418 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +190,7 @@
 				TargetAttributes = {
 					3741C1B41F0A873F004E9BE0 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 54362BT7G2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -202,6 +230,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		773E3C18BE44D5C4F7565418 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeedReader/Pods-SpeedReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4D3B7FB0BAD0E3DC811E011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DBDCA771BBEF2CBC63FBD67A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeedReader/Pods-SpeedReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3741C1B11F0A873F004E9BE0 /* Sources */ = {
@@ -340,28 +416,36 @@
 		};
 		3741C1C51F0A873F004E9BE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 882077CF3D0F18FFAB77F68D /* Pods-SpeedReader.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54362BT7G2;
 				INFOPLIST_FILE = SpeedReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luming.SpeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3741C1C61F0A873F004E9BE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2C08C9A2F325F20F5469ED /* Pods-SpeedReader.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54362BT7G2;
 				INFOPLIST_FILE = SpeedReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luming.SpeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

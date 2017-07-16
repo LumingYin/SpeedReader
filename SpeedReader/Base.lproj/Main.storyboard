@@ -121,6 +121,7 @@ Gw
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="titleLabel" destination="dfo-rg-4au" id="6L4-gP-Y0C"/>
                         <outlet property="urlLabel" destination="1fg-xd-nXb" id="eKt-Ih-hFK"/>
                     </connections>
                 </viewController>
@@ -1509,7 +1510,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-c2-Zv0">
-                                                                            <rect key="frame" x="15" y="1" width="220" height="5"/>
+                                                                            <rect key="frame" x="15" y="1" width="220" height="4"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
                                                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-AC-GVt">
