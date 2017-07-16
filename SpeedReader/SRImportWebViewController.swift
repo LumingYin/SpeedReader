@@ -13,8 +13,9 @@ class SRImportWebViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        getClipboardURL()
     }
+    
     
     @IBAction func cancelPressed(_ sender: NSButton) {
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseCancel)
@@ -23,5 +24,21 @@ class SRImportWebViewController: NSViewController {
     @IBAction func importPressed(_ sender: NSButton) {
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseOK)
 
+    }
+    
+    func getClipboardURL() {
+        if let items = NSPasteboard.general().pasteboardItems {
+            for item in items {
+                for type in item.types {
+                    if type == "public.utf8-plain-text" {
+                        if let url = item.string(forType: type) {
+                            if url.hasPrefix("http://") || url.hasPrefix("https://") {
+                                urlLabel.stringValue = url
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

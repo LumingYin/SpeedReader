@@ -55,7 +55,7 @@ class SRNewArticleViewController: NSViewController {
                 print("sheet closed")
                 if (response == NSModalResponseOK) {
                     if let webImport = webWindow.contentViewController as? SRImportWebViewController {
-                        print("dismissed with url to import: \(webImport.urlLabel)")
+                        print("dismissed with url to import: \(webImport.urlLabel.stringValue)")
                     }
                 } else if (response == NSModalResponseCancel) {
                     print("cancelled")
