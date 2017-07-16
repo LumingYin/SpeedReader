@@ -14,6 +14,7 @@
 		3741C1CA1F0A8AA4004E9BE0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */; };
 		3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */; };
 		569724201F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */; };
+		569724241F1BE4F900D9E7C7 /* SRTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */; };
 		5697271D1F15EA56007749AA /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5697271C1F15EA56007749AA /* AppIcon.icns */; };
 		569B21BD1F1B3C0700D5552C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569B21BC1F1B3C0700D5552C /* Images.xcassets */; };
 		569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */; };
@@ -40,6 +41,7 @@
 		3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRArticleSnippetCellView.swift; sourceTree = "<group>"; };
+		569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRTableRowView.swift; path = ../SRTableRowView.swift; sourceTree = "<group>"; };
 		5697271B1F15E655007749AA /* SpeedReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedReader.entitlements; sourceTree = "<group>"; };
 		5697271C1F15EA56007749AA /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		569B21BC1F1B3C0700D5552C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		3741C1B71F0A873F004E9BE0 /* SpeedReader */ = {
 			isa = PBXGroup;
 			children = (
+				569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */,
 				3741C1BE1F0A873F004E9BE0 /* Main.storyboard */,
 				5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */,
 				3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */,
@@ -212,6 +215,7 @@
 				569B21D11F1B682F00D5552C /* SRWordsCellView.swift in Sources */,
 				569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */,
 				569B21C91F1B67F300D5552C /* SRSpeedCellView.swift in Sources */,
+				569724241F1BE4F900D9E7C7 /* SRTableRowView.swift in Sources */,
 				569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */,
 				3741C1C81F0A89E0004E9BE0 /* ReadDetailWindow.swift in Sources */,
 				569B21CD1F1B681100D5552C /* SRAppearanceCellView.swift in Sources */,

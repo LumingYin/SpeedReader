@@ -40,6 +40,7 @@ class ArticleViewController: NSViewController, NSTextViewDelegate {
     func updateToReflectArticle() {
         if article != nil {
             self.contentTextView.string = article?.content
+            self.contentTextView.scroll(CGPoint(x: 0, y: -50))
         }
     }
     

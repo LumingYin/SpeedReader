@@ -12,6 +12,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var tableView: NSTableView!
     var articles:[Article] = []
 
+    @IBOutlet var contextMenu: NSMenu!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -36,6 +37,10 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return articles.count
+    }
+    
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        return SRTableRowView()
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -72,7 +77,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         let article = articles[row]
         if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
             articleVC.article = article
-            articleVC.updateToReflectArticle()
+            articleVC.updateToReflectArticle()    
         }
         if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
             preferenceVC.article = article
@@ -80,4 +85,15 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         }
 
     }
+    
+    @IBAction func delete(_ sender: NSMenuItem) {
+        print(tableView.clickedRow)
+        if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
+            context.delete(articles[tableView.clickedRow])
+            (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+            getAllArticles()
+        }
+    }
+    
+    
 }

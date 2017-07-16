@@ -1146,6 +1146,9 @@ Good luck!</mutableString>
                                                             </prototypeCellViews>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <outlet property="menu" destination="LiJ-Oo-Hy2" id="6xi-Ha-0d9"/>
+                                                    </connections>
                                                 </tableView>
                                             </subviews>
                                         </clipView>
@@ -1177,10 +1180,21 @@ Good luck!</mutableString>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contextMenu" destination="LiJ-Oo-Hy2" id="D7J-8E-4DE"/>
                         <outlet property="tableView" destination="ZID-5q-q1e" id="zGF-cV-wbG"/>
                     </connections>
                 </viewController>
                 <customObject id="jcr-F0-Agh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="LiJ-Oo-Hy2">
+                    <items>
+                        <menuItem title="Delete" id="cba-Hd-u47">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="delete:" target="c5n-gS-kBH" id="siO-mU-994"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="757" y="1322"/>
         </scene>
