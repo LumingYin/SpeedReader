@@ -46,8 +46,21 @@ class SRNewArticleViewController: NSViewController {
     
     @IBAction func importArticleClicked(_ sender: NSButton) {
         print("clicked")
-        presenting?.dismissViewController(self)
+        let openPanel = NSOpenPanel();
+        openPanel.allowsMultipleSelection = false;
+        openPanel.canChooseDirectories = false;
+        openPanel.canCreateDirectories = false;
+        openPanel.canChooseFiles = true;
+        openPanel.allowedFileTypes = ["txt","rtf","pdf","doc", "docx", "pages"]
+        openPanel.beginSheetModal(for: NSApp.mainWindow!) { (i) in
+            if(i == NSModalResponseOK){
+                print("Opened \(String(describing: openPanel.url))");
+            } else {
+                print("open cancelled")
+            }
+        }
     }
+    
     @IBAction func importURLClicked(_ sender: NSButton) {
         print("clicked")
         if let webWindow = (storyboard?.instantiateController(withIdentifier: "OpenWebWindow") as? NSWindowController)?.window {
@@ -63,5 +76,17 @@ class SRNewArticleViewController: NSViewController {
             })
         }
         presenting?.dismissViewController(self)
+    }
+}
+
+extension NSOpenPanel {
+    var selectUrl: URL? {
+        title = "Select File"
+        allowsMultipleSelection = false
+        canChooseDirectories = false
+        canChooseFiles = true
+        canCreateDirectories = false
+        allowedFileTypes = ["txt","rtf","pdf","doc", "docx", "pages"]
+        return runModal() == NSFileHandlingPanelOKButton ? urls.first : nil
     }
 }
