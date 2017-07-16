@@ -22,8 +22,28 @@ class SRImportWebViewController: NSViewController {
     }
     
     @IBAction func importPressed(_ sender: NSButton) {
+        parseWebpageAsync()
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseOK)
 
+    }
+    
+    func parseWebpageAsync() {
+        if (urlLabel.stringValue.contains("http")) {
+            URLSession.shared.dataTask(with: URL(string: urlLabel.stringValue)!) { (data: Data?, response: URLResponse?, error: Error?) in
+                if error != nil {
+                    print("\(String(describing: error))")
+                } else {
+                    if (data != nil) {
+                        let html:String = String(data: data!, encoding: String.Encoding.utf8)!
+                        
+                        if let doc = HTML(html: html, encoding: .utf8) {
+                            print(doc.title)
+                        }
+                        print(html)
+                    }
+                }
+                }.resume()
+        }
     }
     
     func getClipboardURL() {
