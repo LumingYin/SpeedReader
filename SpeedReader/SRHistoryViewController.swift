@@ -10,6 +10,7 @@ import Cocoa
 
 class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var tableView: NSTableView!
+    var articles:[Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +19,19 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         // Do view setup here.
     }
     
+    func getAllHistory() {
+        if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
+            do {
+                articles = try context.fetch(Article.fetchRequest())
+            } catch {
+                print("Fetch article failed")
+            }
+        }
+        tableView.reloadData()
+    }
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 10
+        return articles.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
