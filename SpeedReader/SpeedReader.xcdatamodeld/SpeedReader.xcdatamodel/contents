@@ -3,7 +3,7 @@
     <entity name="Article" representedClassName="Article" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeOfArticle" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="preference" maxCount="1" deletionRule="Deny" destinationEntity="Preference" syncable="YES"/>
+        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Preference" inverseName="article" inverseEntity="Preference" syncable="YES"/>
     </entity>
     <entity name="Preference" representedClassName="Preference" syncable="YES" codeGenerationType="class">
         <attribute name="fontFamily" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,9 +12,10 @@
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="wordsPerRoll" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="preference" inverseEntity="Article" syncable="YES"/>
     </entity>
     <elements>
         <element name="Article" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Preference" positionX="-54" positionY="0" width="128" height="135"/>
+        <element name="Preference" positionX="-54" positionY="0" width="128" height="150"/>
     </elements>
 </model>
