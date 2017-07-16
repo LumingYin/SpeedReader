@@ -14,6 +14,7 @@
 		3741C1CA1F0A8AA4004E9BE0 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1C91F0A8AA4004E9BE0 /* SettingsWindowController.swift */; };
 		3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */; };
 		5697271D1F15EA56007749AA /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5697271C1F15EA56007749AA /* AppIcon.icns */; };
+		569B21BD1F1B3C0700D5552C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569B21BC1F1B3C0700D5552C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		5697271B1F15E655007749AA /* SpeedReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedReader.entitlements; sourceTree = "<group>"; };
 		5697271C1F15EA56007749AA /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		569B21BC1F1B3C0700D5552C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				3741C1C91F0A8AA4004E9BE0 /* SettingsWindowController.swift */,
 				3741C1C71F0A89E0004E9BE0 /* ReadDetailWindow.swift */,
 				3741C1C11F0A873F004E9BE0 /* Info.plist */,
+				569B21BC1F1B3C0700D5552C /* Images.xcassets */,
 			);
 			path = SpeedReader;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569B21BD1F1B3C0700D5552C /* Images.xcassets in Resources */,
 				3741C1C01F0A873F004E9BE0 /* Main.storyboard in Resources */,
 				5697271D1F15EA56007749AA /* AppIcon.icns in Resources */,
 			);
