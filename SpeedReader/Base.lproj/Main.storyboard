@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -893,21 +894,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqb-nQ-CdL">
-                                <rect key="frame" x="20" y="79" width="520" height="338"/>
-                                <clipView key="contentView" id="GY6-yr-Eku">
-                                    <rect key="frame" x="1" y="1" width="518" height="336"/>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-CC-eZG">
+                                <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
+                                <view key="contentView" id="sO0-Lm-CBo">
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="zEP-kv-CBz">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="624"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="518" height="336"/>
-                                            <size key="maxSize" width="645" height="10000000"/>
-                                            <attributedString key="textStorage">
-                                                <fragment>
-                                                    <mutableString key="content">Speed reading is the art of silencing subvocalization. Most readers have an average reading speed of 200 wpm, which is about as fast as they can read a passage out loud. This is no coincidence. It is their inner voice that paces through the text that keeps them from achieving higher reading speeds. They can only read as fast as they can speak because that's the way they were taught to read, through reading systems like Hooked on Phonics.
+                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-iO-WQH">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
+                                            <clipView key="contentView" id="UtV-aK-Hjs">
+                                                <rect key="frame" x="1" y="1" width="558" height="479"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ghx-4r-yrC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="558" height="800"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="558" height="479"/>
+                                                        <size key="maxSize" width="558" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment>
+                                                                <mutableString key="content">Speed reading is the art of silencing subvocalization. Most readers have an average reading speed of 200 wpm, which is about as fast as they can read a passage out loud. This is no coincidence. It is their inner voice that paces through the text that keeps them from achieving higher reading speeds. They can only read as fast as they can speak because that's the way they were taught to read, through reading systems like Hooked on Phonics.
 
 However, it is entirely possible to read at a much greater speed, with much better reading comprehension, by silencing this inner voice. The solution is simple - absorb reading material faster than that inner voice can keep up. 
 
@@ -926,123 +933,51 @@ That's basically it - constantly read passages at a rate faster than you can kee
 One other setting that's worth mentioning in this introduction is the chunk size – the number of words that are flashed at each interval on the screen. When you read aloud, you can only say one word at a time. However, this limit does not apply to speed reading. Once your inner voice subsides and with constant practice, you can read multiple words at a time. This is the best way to achieve reading speeds of 1000+ wpm. Start small with 2 word chunk sizes and find out that as you increase, 3,4, or even higher chunk sizes are possible.
 
 Good luck!</mutableString>
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="smallSystem"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
+                                                                <attributes>
+                                                                    <font key="NSFont" metaFont="system"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="pFw-Cy-cJD">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2wo-Qg-UFB">
+                                                <rect key="frame" x="543" y="1" width="16" height="479"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="FZz-sK-bfg">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="cGy-sZ-sS0">
-                                    <rect key="frame" x="503" y="1" width="16" height="336"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ElL-FA-g9k">
-                                <rect key="frame" x="433" y="13" width="113" height="32"/>
-                                <buttonCell key="cell" type="push" title="Speed Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xhP-Ej-IRX">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="speedReadClicked:" target="XfG-lQ-9wD" id="kQ9-3X-wsZ"/>
-                                </connections>
-                            </button>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bly-FF-9Z4">
-                                <rect key="frame" x="72" y="21" width="195" height="19"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="IMv-FB-A0u"/>
-                            </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-1v-uYD">
-                                <rect key="frame" x="18" y="22" width="43" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed" id="EIa-wh-Hth">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-2h-eUL">
-                                <rect key="frame" x="283" y="22" width="32" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font" id="SHs-us-bjG">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXm-5k-eMl">
-                                <rect key="frame" x="18" y="422" width="232" height="24"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed Reading Content" id="atw-xD-SYc">
-                                    <font key="font" metaFont="systemBold" size="20"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Elg-tD-0R3">
-                                <rect key="frame" x="326" y="17" width="76" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="FUX-cD-zFu" id="0VK-qE-opI">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="t1K-sZ-Pn7">
-                                        <items>
-                                            <menuItem title="Item 1" state="on" id="FUX-cD-zFu"/>
-                                            <menuItem title="Item 2" id="c1T-Hc-ZRz"/>
-                                            <menuItem title="Item 3" id="SsU-3w-Eph"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-7G-FAZ">
-                                <rect key="frame" x="18" y="46" width="150" height="14"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed Reading Preferences" id="KSY-vW-61z">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="3Pj-iO-WQH" secondAttribute="trailing" id="7C3-jm-Aba"/>
+                                        <constraint firstItem="3Pj-iO-WQH" firstAttribute="leading" secondItem="sO0-Lm-CBo" secondAttribute="leading" id="E64-3G-LDg"/>
+                                        <constraint firstItem="3Pj-iO-WQH" firstAttribute="top" secondItem="sO0-Lm-CBo" secondAttribute="top" id="NQG-Y8-244"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Pj-iO-WQH" secondAttribute="bottom" id="dUw-pS-FsJ"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hpg-7G-FAZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="30b-fw-n3B"/>
-                            <constraint firstItem="IDm-1v-uYD" firstAttribute="top" secondItem="Iqb-nQ-CdL" secondAttribute="bottom" constant="40" id="3Jk-W7-7tt"/>
-                            <constraint firstAttribute="trailing" secondItem="Iqb-nQ-CdL" secondAttribute="trailing" constant="20" id="5hJ-xz-y9b"/>
-                            <constraint firstItem="e5w-2h-eUL" firstAttribute="leading" secondItem="bly-FF-9Z4" secondAttribute="trailing" constant="20" id="BDa-Xt-be3"/>
-                            <constraint firstItem="bly-FF-9Z4" firstAttribute="leading" secondItem="IDm-1v-uYD" secondAttribute="trailing" constant="15" id="FUy-u0-ACc"/>
-                            <constraint firstAttribute="bottom" secondItem="ElL-FA-g9k" secondAttribute="bottom" constant="20" id="GuK-jI-S84"/>
-                            <constraint firstItem="IDm-1v-uYD" firstAttribute="centerY" secondItem="Elg-tD-0R3" secondAttribute="centerY" id="Lzy-gQ-bLe"/>
-                            <constraint firstItem="Elg-tD-0R3" firstAttribute="leading" secondItem="e5w-2h-eUL" secondAttribute="trailing" constant="15" id="Mna-Wp-BFa"/>
-                            <constraint firstItem="Iqb-nQ-CdL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="PS3-hp-y5P"/>
-                            <constraint firstAttribute="bottom" secondItem="Elg-tD-0R3" secondAttribute="bottom" constant="20" id="PW9-7M-VX9"/>
-                            <constraint firstItem="IDm-1v-uYD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Rtg-ec-1o8"/>
-                            <constraint firstItem="aXm-5k-eMl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="SAe-oy-1h3"/>
-                            <constraint firstItem="IDm-1v-uYD" firstAttribute="top" secondItem="hpg-7G-FAZ" secondAttribute="bottom" constant="7" id="Wo2-Mo-tua"/>
-                            <constraint firstAttribute="trailing" secondItem="ElL-FA-g9k" secondAttribute="trailing" constant="20" id="Zwy-en-odz"/>
-                            <constraint firstItem="Iqb-nQ-CdL" firstAttribute="top" secondItem="aXm-5k-eMl" secondAttribute="bottom" constant="5" id="eRS-O9-MoD"/>
-                            <constraint firstItem="e5w-2h-eUL" firstAttribute="centerY" secondItem="Elg-tD-0R3" secondAttribute="centerY" id="fzm-Zx-d6d"/>
-                            <constraint firstItem="ElL-FA-g9k" firstAttribute="leading" secondItem="Elg-tD-0R3" secondAttribute="trailing" constant="40" id="iTA-bx-k6J"/>
-                            <constraint firstItem="bly-FF-9Z4" firstAttribute="centerY" secondItem="Elg-tD-0R3" secondAttribute="centerY" id="kva-co-MYd"/>
-                            <constraint firstItem="aXm-5k-eMl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="35" id="mFY-T7-VqQ"/>
+                            <constraint firstAttribute="trailing" secondItem="FhU-CC-eZG" secondAttribute="trailing" id="KyD-7J-yIf"/>
+                            <constraint firstItem="FhU-CC-eZG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="LTi-pE-BqL"/>
+                            <constraint firstAttribute="bottom" secondItem="FhU-CC-eZG" secondAttribute="bottom" id="org-0s-WBi"/>
+                            <constraint firstItem="FhU-CC-eZG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="sPr-G2-zsE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentLabel" destination="aXm-5k-eMl" id="VAI-cL-qhw"/>
-                        <outlet property="contentTextView" destination="zEP-kv-CBz" id="CtL-fk-DFX"/>
-                        <outlet property="fontLabel" destination="e5w-2h-eUL" id="jxB-c2-aZh"/>
-                        <outlet property="fontPopUp" destination="Elg-tD-0R3" id="APr-EL-LsP"/>
-                        <outlet property="preferencesLabel" destination="hpg-7G-FAZ" id="QQF-es-3l0"/>
-                        <outlet property="speedLabel" destination="IDm-1v-uYD" id="RCo-EQ-phj"/>
-                        <outlet property="speedReadButton" destination="ElL-FA-g9k" id="FSl-v5-ZJe"/>
-                        <outlet property="speedSlider" destination="bly-FF-9Z4" id="kKU-Dv-rW8"/>
+                        <outlet property="contentTextView" destination="ghx-4r-yrC" id="8oP-Eb-4Rr"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466" y="2102"/>
+            <point key="canvasLocation" x="466" y="2101.5"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="M4Z-U1-MYW">

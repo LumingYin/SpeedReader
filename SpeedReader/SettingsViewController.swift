@@ -27,10 +27,11 @@ class SettingsViewController: NSViewController {
         self.view.wantsLayer = true
         
         allFontNames = NSFontManager.shared().availableFontFamilies
+        contentTextView.textContainerInset = NSSize(width: 20.0, height: 20.0)
         
-        fontPopUp.removeAllItems()
-        fontPopUp.addItem(withTitle: "System Font")
-        fontPopUp.addItems(withTitles: allFontNames)
+//        fontPopUp.removeAllItems()
+//        fontPopUp.addItem(withTitle: "System Font")
+//        fontPopUp.addItems(withTitles: allFontNames)
 //        self.view.layer?.backgroundColor = NSColor.white.cgColor
         // Do any additional setup after loading the view.
     }
@@ -44,6 +45,12 @@ class SettingsViewController: NSViewController {
     @IBAction func speedReadClicked(_ sender: Any) {
         openNewWindow()
     }
+    
+//    NSArray *tagschemes = [NSArray arrayWithObjects:NSLinguisticTagSchemeLanguage, nil];
+//    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagschemes options:0];
+//    [tagger setString:@"Das ist ein bisschen deutscher Text. Bitte löschen Sie diesen nicht."];
+//    NSString *language = [tagger tagAtIndex:0 scheme:NSLinguisticTagSchemeLanguage tokenRange:NULL sentenceRange:NULL];
+
 
     
     func openNewWindow() {
