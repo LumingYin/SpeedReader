@@ -1222,7 +1222,7 @@ Good luck!</mutableString>
                                                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-r6-paB">
                                                                             <rect key="frame" x="14" y="27" width="223" height="24"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" numberOfTickMarks="4" sliderType="linear" id="C90-LE-xer"/>
+                                                                            <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.5" tickMarkPosition="below" numberOfTickMarks="4" sliderType="linear" id="C90-LE-xer"/>
                                                                             <connections>
                                                                                 <action selector="speedChanged:" target="3PK-ag-AlE" id="1ND-IX-gkw"/>
                                                                             </connections>
@@ -1358,9 +1358,11 @@ Good luck!</mutableString>
                                                                         </button>
                                                                     </subviews>
                                                                     <connections>
+                                                                        <outlet property="disclosureTriangle" destination="BVH-2G-0dy" id="Yfb-GR-m7f"/>
                                                                         <outlet property="fontNamePopUp" destination="3Wh-1B-ClT" id="c2G-HZ-Uuy"/>
                                                                         <outlet property="fontSizeComboBox" destination="IEg-AC-GVt" id="sUD-ao-x9C"/>
                                                                         <outlet property="fontSubFamilyPopUp" destination="S2k-HG-5SN" id="qgR-1j-Bxj"/>
+                                                                        <outlet property="topLabel" destination="znG-v1-XJp" id="aX8-jR-xV1"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="AppearanceCellView" id="vnm-5E-Pzo" userLabel="color" customClass="SRAppearanceCellView" customModule="SpeedReader" customModuleProvider="target">
@@ -1431,7 +1433,9 @@ Good luck!</mutableString>
                                                                         </button>
                                                                     </subviews>
                                                                     <connections>
+                                                                        <outlet property="disclosureTriangle" destination="jH5-lA-5Ir" id="V5I-4h-7XA"/>
                                                                         <outlet property="lightDarkToggle" destination="Zjk-HY-erm" id="2Wp-LV-xZ6"/>
+                                                                        <outlet property="topLabel" destination="jEP-qi-Yr9" id="7ax-8f-k8b"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="LanguageCellView" id="JWS-fU-F6d" userLabel="language" customClass="SRLanguageCellView" customModule="SpeedReader" customModuleProvider="target">
@@ -1485,6 +1489,8 @@ Good luck!</mutableString>
                                                                     </subviews>
                                                                     <connections>
                                                                         <outlet property="contentLanguagePopUp" destination="GV9-gM-7Ic" id="jHv-pb-HCw"/>
+                                                                        <outlet property="disclosureTriangle" destination="Dln-jN-WOH" id="ZaM-Ce-1xK"/>
+                                                                        <outlet property="topLabel" destination="Ojf-Mv-4xg" id="z3i-cg-9DQ"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="WordsCellView" id="C7W-WJ-mmb" userLabel="words" customClass="SRWordsCellView" customModule="SpeedReader" customModuleProvider="target">
@@ -1536,6 +1542,8 @@ Good luck!</mutableString>
                                                                         </button>
                                                                     </subviews>
                                                                     <connections>
+                                                                        <outlet property="disclosureTriangle" destination="gNN-Ex-dLp" id="sxB-Rf-3zJ"/>
+                                                                        <outlet property="topLabel" destination="dk4-mv-nOE" id="wbc-tc-KTb"/>
                                                                         <outlet property="wordsPerRoll" destination="2ij-oa-0rK" id="MbY-TP-H4K"/>
                                                                     </connections>
                                                                 </tableCellView>

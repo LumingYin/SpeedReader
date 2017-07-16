@@ -29,9 +29,18 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
     @IBAction func reduceTransparencyChanged(_ sender: NSButton) {
     }
     
-    @IBAction func collapse(_ sender: Any) {
+    @IBAction func collapse(_ sender: NSButton) {
+        if (sender != disclosureTriangle) {
+            if (disclosureTriangle.state == NSOnState) {
+                disclosureTriangle.state = NSOffState
+            } else {
+                disclosureTriangle.state = NSOnState
+            }
+        }
+
         if let delegate = delegate {
             delegate.collapseAppearance = !(delegate.collapseAppearance)
+            delegate.updateHeight()
         }
     }
 

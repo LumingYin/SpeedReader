@@ -39,9 +39,18 @@ class SRFontCellView: SRGeneralPrefCellView {
         updateFontInDelegate()
     }
     
-    @IBAction func collapse(_ sender: Any) {
+    @IBAction func collapse(_ sender: NSButton) {
+        if (sender != disclosureTriangle) {
+            if (disclosureTriangle.state == NSOnState) {
+                disclosureTriangle.state = NSOffState
+            } else {
+                disclosureTriangle.state = NSOnState
+            }
+        }
+
         if let delegate = delegate {
             delegate.collapseFont = !(delegate.collapseFont)
+            delegate.updateHeight()
         }
     }
     

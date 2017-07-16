@@ -16,21 +16,27 @@ class ReadViewController: NSViewController {
     var readingSpeed: UInt32 = 60
     let ms = 1000
     var fontName: String = "System Font"
+    var font: NSFont?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
 //        self.view.layer?.backgroundColor = NSColor.white.cgColor
         self.displayLabel.stringValue = ""
-        if fontName == "System Font" {
-            self.displayLabel.font = NSFont.systemFont(ofSize: 21.0)
-        } else {
-            self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
+        if let _ = font {
+            self.displayLabel.font = font
         }
+//        if fontName == "System Font" {
+//            self.displayLabel.font = NSFont.systemFont(ofSize: 21.0)
+//        } else {
+//            self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
+//        }
     }
     
     override func viewDidAppear() {
-        self.displayLabel.font = NSFont.init(name: fontName, size: 21.0)
+        if let _ = font {
+            self.displayLabel.font = font
+        }
         startReading()
     }
     

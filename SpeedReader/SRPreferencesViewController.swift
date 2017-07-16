@@ -12,7 +12,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
 
     @IBOutlet weak var tableView: NSTableView!
     
-    var speed: Float = 0.0
+    var speed: Float = 0.1
     var font: NSFont = NSFont.systemFont(ofSize: 12.0)
     
     var collapseSpeed: Bool = false
@@ -60,25 +60,28 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        switch row {
-        case 0:
-            return 79+10
-        case 1:
-            return 95+10
-        case 2:
-            return 105+10
-        case 3:
-            return 56+10
-        case 4:
-            return 56+10
-        case 5:
-            return 64
-        default:
+        if (row == 0) {
+            return collapseSpeed ? 25: 79+10
+        } else if (row == 1) {
+            return collapseFont ? 25: 95+10
+        } else if (row == 2) {
+            return collapseAppearance ? 25: 105+10
+        } else if (row == 3) {
+            return collapseLanguage ? 25: 56+10
+        } else if (row == 4) {
+            return collapseWords ? 25: 56+10
+        } else if (row == 5) {
+            return 75
+        } else {
             return 95
         }
     }
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         return false
+    }
+    
+    func updateHeight() {
+        tableView.reloadData()
     }
 }

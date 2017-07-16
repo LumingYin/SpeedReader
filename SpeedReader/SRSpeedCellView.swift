@@ -23,9 +23,18 @@ class SRSpeedCellView: SRGeneralPrefCellView {
         delegate?.speed = sender.floatValue
     }
     
-    @IBAction func collapse(_ sender: Any) {
+    @IBAction func collapse(_ sender: NSButton) {
+        if (sender != disclosureTriangle) {
+            if (disclosureTriangle.state == NSOnState) {
+                disclosureTriangle.state = NSOffState
+            } else {
+                disclosureTriangle.state = NSOnState
+            }
+        }
+
         if let delegate = delegate {
             delegate.collapseSpeed = !(delegate.collapseSpeed)
+            delegate.updateHeight()
         }
     }
     

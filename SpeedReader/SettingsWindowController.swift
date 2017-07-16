@@ -12,6 +12,7 @@ class SettingsWindowController: NSWindowController, NSSharingServicePickerDelega
     
     @IBOutlet weak var shareButton: NSButton!
     var detailWindow: ReadDetailWindow?
+    var prefVC: SRPreferencesViewController?
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -42,15 +43,19 @@ class SettingsWindowController: NSWindowController, NSSharingServicePickerDelega
     }
     
     func openNewWindow() {
-        detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
-        if let readVC = detailWindow?.contentViewController as? ReadViewController {
-//            readVC.readingSliderValue = speed
-//            readVC.textToRead = contentTextView.string
-//            if let fontName = fontPopUp.selectedItem?.title {
-//                readVC.fontName = fontName
-//            }
+        if let contentVC = self.contentViewController as? SRSplitViewController {
+            if let prefVC = contentVC.splitViewItems[2].viewController as? SRPreferencesViewController {
+                if let textVC = contentVC.splitViewItems[1].viewController as? SettingsViewController {
+                    detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
+                    if let readVC = detailWindow?.contentViewController as? ReadViewController {
+                        readVC.readingSliderValue = prefVC.speed
+                        readVC.textToRead = textVC.contentTextView.string
+                        readVC.font = prefVC.font
+                    }
+                    detailWindow?.showWindow(self)
+                }
+            }
         }
-        detailWindow?.showWindow(self)
     }
 
     

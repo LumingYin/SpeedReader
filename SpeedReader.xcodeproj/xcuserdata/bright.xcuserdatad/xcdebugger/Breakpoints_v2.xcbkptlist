@@ -2,4 +2,84 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpeedReader/SRLanguageCellView.swift"
+            timestampString = "521893748.708078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SRLanguageCellView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpeedReader.SRLanguageCellView.topLabel.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSButton&gt;"
+                  moduleName = "SpeedReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bright/Repos/SpeedReader/SpeedReader/SRLanguageCellView.swift"
+                  timestampString = "521893749.389874"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpeedReader.SRLanguageCellView.topLabel.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSButton&gt;"
+                  moduleName = "SpeedReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bright/Repos/SpeedReader/SpeedReader/SRLanguageCellView.swift"
+                  timestampString = "521893749.392094"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpeedReader.SRLanguageCellView.init (frame : __C.CGRect) -&gt; SpeedReader.SRLanguageCellView"
+                  moduleName = "SpeedReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bright/Repos/SpeedReader/SpeedReader/SRLanguageCellView.swift"
+                  timestampString = "521893749.394032"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "149">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpeedReader.SRLanguageCellView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SpeedReader.SRLanguageCellView&gt;"
+                  moduleName = "SpeedReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bright/Repos/SpeedReader/SpeedReader/SRLanguageCellView.swift"
+                  timestampString = "521893749.395917"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
