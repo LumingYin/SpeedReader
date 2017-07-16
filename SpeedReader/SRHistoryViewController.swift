@@ -35,6 +35,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
                         tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
                         noContentLabel.isHidden = true
                         hideOnboardingExperience()
+                        updateViewsBasedOnRow(0)
                     } else {
                         noContentLabel.isHidden = false
                     }
@@ -50,6 +51,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
             let indexSet = NSIndexSet(index: 0)
             tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
             hideOnboardingExperience()
+            updateViewsBasedOnRow(0)
         }
     }
     
@@ -92,14 +94,16 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        let row = tableView.selectedRow
-        print(tableView.selectedRow)
-        if row == -1 {
+        updateViewsBasedOnRow(tableView.selectedRow)
+    }
+    
+    func updateViewsBasedOnRow(_ selectedRow: Int) {
+        if selectedRow == -1 {
             showOnboardingExperience()
             return
         } else {
             hideOnboardingExperience()
-            let article = articles[row]
+            let article = articles[selectedRow]
             if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
                 articleVC.article = article
                 articleVC.updateToReflectArticle()
