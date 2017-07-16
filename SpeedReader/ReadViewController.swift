@@ -17,7 +17,8 @@ class ReadViewController: NSViewController {
     let ms = 1000
     var font: NSFont?
     var enableDark: Bool = false
-
+    var arrayText: [String] = []
+    var currentIndexInArray: Int = 0
     
     @IBOutlet weak var visualEffectView: NSVisualEffectView!
     
@@ -60,28 +61,20 @@ class ReadViewController: NSViewController {
     func startReading() {
         calculateReadingSpeed()
         if let text = textToRead {
-            var arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
+            arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
             arrayText = arrayText.filter {
                 $0 != ""
             }
-//            print("arrayText: \(arrayText)")
-            DispatchQueue.global(qos: .background).async {
-                // 60 least
-                usleep(self.readingSpeed)
-                for word in arrayText {
-                    DispatchQueue.main.async {
-                        self.displayLabel?.stringValue = word
-                    }
-                    usleep(self.readingSpeed)
-                }
-                usleep(self.readingSpeed)
-                DispatchQueue.main.async {
+            currentIndexInArray = 0
+            Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { (timer) in
+                if (self.currentIndexInArray < self.arrayText.count) {
+                    self.displayLabel?.stringValue = self.arrayText[self.currentIndexInArray]
+                    self.currentIndexInArray = self.currentIndexInArray + 1
+                } else {
+                    timer.invalidate()
                     self.view.window?.close()
                 }
-
-                
-            }
-
+            })
         }
     }
     
