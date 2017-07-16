@@ -52,6 +52,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
         }
         if let cell = tableView.make(withIdentifier: identifier, owner: self) as? SRGeneralPrefCellView {
             cell.delegate = self
+            cell.configure()
             return cell
         }
         return nil

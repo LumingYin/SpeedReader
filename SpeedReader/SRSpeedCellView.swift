@@ -28,6 +28,10 @@ class SRSpeedCellView: SRGeneralPrefCellView {
             delegate.collapseSpeed = !(delegate.collapseSpeed)
         }
     }
+    
+    override func configure() {
+        
+    }
 
     
 }

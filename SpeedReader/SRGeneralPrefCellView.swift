@@ -18,5 +18,9 @@ class SRGeneralPrefCellView: NSTableCellView {
         // Drawing code here.
     }
     
+    func configure() {
+        
+    }
+    
     
 }
