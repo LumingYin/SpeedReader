@@ -42,6 +42,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
             identifier = "SpeedCellView"
         }
         if let cell = tableView.make(withIdentifier: identifier, owner: self) as? NSTableCellView {
+            
             return cell
         }
         return nil

@@ -17,6 +17,15 @@
 		569B21BD1F1B3C0700D5552C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569B21BC1F1B3C0700D5552C /* Images.xcassets */; };
 		569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */; };
 		569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */; };
+		569B21C51F1B5B6400D5552C /* SRHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21C41F1B5B6400D5552C /* SRHistoryViewController.swift */; };
+		569B21C71F1B65F300D5552C /* SRNewArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21C61F1B65F300D5552C /* SRNewArticleViewController.swift */; };
+		569B21C91F1B67F300D5552C /* SRSpeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21C81F1B67F300D5552C /* SRSpeedCellView.swift */; };
+		569B21CB1F1B680200D5552C /* SRFontCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21CA1F1B680200D5552C /* SRFontCellView.swift */; };
+		569B21CD1F1B681100D5552C /* SRAppearanceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21CC1F1B681100D5552C /* SRAppearanceCellView.swift */; };
+		569B21CF1F1B682200D5552C /* SRLanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21CE1F1B682200D5552C /* SRLanguageCellView.swift */; };
+		569B21D11F1B682F00D5552C /* SRWordsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D01F1B682F00D5552C /* SRWordsCellView.swift */; };
+		569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D21F1B684300D5552C /* SRReadCellView.swift */; };
+		569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +42,15 @@
 		569B21BC1F1B3C0700D5552C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRSplitViewController.swift; sourceTree = "<group>"; };
 		569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRPreferencesViewController.swift; sourceTree = "<group>"; };
+		569B21C41F1B5B6400D5552C /* SRHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHistoryViewController.swift; sourceTree = "<group>"; };
+		569B21C61F1B65F300D5552C /* SRNewArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRNewArticleViewController.swift; sourceTree = "<group>"; };
+		569B21C81F1B67F300D5552C /* SRSpeedCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRSpeedCellView.swift; sourceTree = "<group>"; };
+		569B21CA1F1B680200D5552C /* SRFontCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFontCellView.swift; sourceTree = "<group>"; };
+		569B21CC1F1B681100D5552C /* SRAppearanceCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAppearanceCellView.swift; sourceTree = "<group>"; };
+		569B21CE1F1B682200D5552C /* SRLanguageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRLanguageCellView.swift; sourceTree = "<group>"; };
+		569B21D01F1B682F00D5552C /* SRWordsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWordsCellView.swift; sourceTree = "<group>"; };
+		569B21D21F1B684300D5552C /* SRReadCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRReadCellView.swift; sourceTree = "<group>"; };
+		569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRGeneralPrefCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,9 @@
 				5697271B1F15E655007749AA /* SpeedReader.entitlements */,
 				3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */,
 				3741C1BE1F0A873F004E9BE0 /* Main.storyboard */,
+				569B21D61F1B6A4300D5552C /* TableCellViews */,
+				569B21C61F1B65F300D5552C /* SRNewArticleViewController.swift */,
+				569B21C41F1B5B6400D5552C /* SRHistoryViewController.swift */,
 				3741C1BA1F0A873F004E9BE0 /* SettingsViewController.swift */,
 				3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */,
 				3741C1C91F0A8AA4004E9BE0 /* SettingsWindowController.swift */,
@@ -79,6 +100,20 @@
 				569B21BC1F1B3C0700D5552C /* Images.xcassets */,
 			);
 			path = SpeedReader;
+			sourceTree = "<group>";
+		};
+		569B21D61F1B6A4300D5552C /* TableCellViews */ = {
+			isa = PBXGroup;
+			children = (
+				569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */,
+				569B21C81F1B67F300D5552C /* SRSpeedCellView.swift */,
+				569B21CA1F1B680200D5552C /* SRFontCellView.swift */,
+				569B21CC1F1B681100D5552C /* SRAppearanceCellView.swift */,
+				569B21CE1F1B682200D5552C /* SRLanguageCellView.swift */,
+				569B21D01F1B682F00D5552C /* SRWordsCellView.swift */,
+				569B21D21F1B684300D5552C /* SRReadCellView.swift */,
+			);
+			name = TableCellViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,11 +194,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3741C1BB1F0A873F004E9BE0 /* SettingsViewController.swift in Sources */,
+				569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */,
+				569B21C71F1B65F300D5552C /* SRNewArticleViewController.swift in Sources */,
 				3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */,
+				569B21CF1F1B682200D5552C /* SRLanguageCellView.swift in Sources */,
+				569B21CB1F1B680200D5552C /* SRFontCellView.swift in Sources */,
 				569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */,
 				3741C1CA1F0A8AA4004E9BE0 /* SettingsWindowController.swift in Sources */,
+				569B21D11F1B682F00D5552C /* SRWordsCellView.swift in Sources */,
+				569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */,
+				569B21C91F1B67F300D5552C /* SRSpeedCellView.swift in Sources */,
 				569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */,
 				3741C1C81F0A89E0004E9BE0 /* ReadDetailWindow.swift in Sources */,
+				569B21CD1F1B681100D5552C /* SRAppearanceCellView.swift in Sources */,
+				569B21C51F1B5B6400D5552C /* SRHistoryViewController.swift in Sources */,
 				3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

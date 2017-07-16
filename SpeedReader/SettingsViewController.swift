@@ -42,9 +42,9 @@ class SettingsViewController: NSViewController {
         }
     }
 
-    @IBAction func speedReadClicked(_ sender: Any) {
-        openNewWindow()
-    }
+//    @IBAction func speedReadClicked(_ sender: Any) {
+//        openNewWindow()
+//    }
     
 //    NSArray *tagschemes = [NSArray arrayWithObjects:NSLinguisticTagSchemeLanguage, nil];
 //    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagschemes options:0];
@@ -53,17 +53,6 @@ class SettingsViewController: NSViewController {
 
 
     
-    func openNewWindow() {
-        detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
-        if let readVC = detailWindow?.contentViewController as? ReadViewController {
-            readVC.readingSliderValue = speedSlider.floatValue
-            readVC.textToRead = contentTextView.string
-            if let fontName = fontPopUp.selectedItem?.title {
-                readVC.fontName = fontName
-            }
-        }
-        detailWindow?.showWindow(self)
-    }
 
 }
 
