@@ -34,6 +34,12 @@ class SettingsWindowController: NSWindowController {
     @IBAction func shareClicked(_ sender: Any) {
     }
 
+    @IBAction func preferenceSwapped(_ sender: NSSegmentedControl) {
+        if let spvc = self.contentViewController as? SRSplitViewController {
+            spvc.splitViewItems[2].isCollapsed = !spvc.splitViewItems[2].isCollapsed
+            sender.setSelected(!spvc.splitViewItems[2].isCollapsed, forSegment: 0)
+        }
+    }
     @IBAction func preferencesClicked(_ sender: Any) {
         if let spvc = self.contentViewController as? SRSplitViewController {
             spvc.splitViewItems[2].isCollapsed = !spvc.splitViewItems[2].isCollapsed

@@ -809,6 +809,9 @@
                                                 <segment image="NSActionTemplate" width="44" selected="YES"/>
                                             </segments>
                                         </segmentedCell>
+                                        <connections>
+                                            <action selector="preferenceSwapped:" target="B8D-0N-5wS" id="4pM-hc-jSy"/>
+                                        </connections>
                                     </segmentedControl>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -894,7 +897,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-CC-eZG">
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-CC-eZG">
                                 <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                                 <view key="contentView" id="sO0-Lm-CBo">
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
