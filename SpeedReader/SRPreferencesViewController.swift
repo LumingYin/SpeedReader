@@ -12,6 +12,15 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
 
     @IBOutlet weak var tableView: NSTableView!
     
+    var speed: Float = 0.0
+    
+    var collapseSpeed: Bool = false
+    var collapseFont: Bool = false
+    var collapseAppearance: Bool = false
+    var collapseLanguage: Bool = false
+    var collapseWords: Bool = false
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -41,8 +50,8 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
         default:
             identifier = "SpeedCellView"
         }
-        if let cell = tableView.make(withIdentifier: identifier, owner: self) as? NSTableCellView {
-            
+        if let cell = tableView.make(withIdentifier: identifier, owner: self) as? SRGeneralPrefCellView {
+            cell.delegate = self
             return cell
         }
         return nil

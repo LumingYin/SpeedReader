@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SRReadCellView: NSTableCellView {
+class SRReadCellView: SRGeneralPrefCellView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -16,4 +16,9 @@ class SRReadCellView: NSTableCellView {
         // Drawing code here.
     }
     
+    @IBAction func readInlineClicked(_ sender: Any) {
+    }
+    
+    @IBAction func readFocusedClicked(_ sender: Any) {
+    }
 }

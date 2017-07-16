@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class SRSpeedCellView: NSTableCellView {
+class SRSpeedCellView: SRGeneralPrefCellView {
     
-    var delegate: SettingsWindowController?
     @IBOutlet weak var disclosureTriangle: NSButton!
     @IBOutlet weak var topLabel: NSButton!
+
     @IBOutlet weak var slider: NSSlider!
 
     override func draw(_ dirtyRect: NSRect) {
@@ -28,5 +28,6 @@ class SRSpeedCellView: NSTableCellView {
             delegate.collapseSpeed = !(delegate.collapseSpeed)
         }
     }
+
     
 }

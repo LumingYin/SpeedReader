@@ -1273,24 +1273,15 @@ Good luck!</mutableString>
                                                                         </button>
                                                                     </subviews>
                                                                     <connections>
-                                                                        <outlet property="disclosureTriangle" destination="zLz-xH-mPB" id="Shm-eT-PtI"/>
+                                                                        <outlet property="disclosureTriangle" destination="zLz-xH-mPB" id="Fqa-xm-pJT"/>
                                                                         <outlet property="slider" destination="WF8-r6-paB" id="K4i-en-dcI"/>
-                                                                        <outlet property="topLabel" destination="8EV-5X-Ir9" id="orW-zL-WoN"/>
+                                                                        <outlet property="topLabel" destination="8EV-5X-Ir9" id="xQU-Yr-1Ml"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="FontCellView" id="1Dg-LM-htQ" userLabel="font" customClass="SRFontCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="82" width="247" height="95"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or8-un-UVf">
-                                                                            <rect key="frame" x="34" y="81" width="130" height="19"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font" id="9K5-7H-2Vn">
-                                                                                <font key="font" metaFont="systemSemibold" size="14"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-c2-Zv0">
                                                                             <rect key="frame" x="15" y="1" width="220" height="5"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1307,6 +1298,9 @@ Good luck!</mutableString>
                                                                                     <string>10</string>
                                                                                 </objectValues>
                                                                             </comboBoxCell>
+                                                                            <connections>
+                                                                                <action selector="fontSizeChanged:" target="1Dg-LM-htQ" id="ycA-lL-VvX"/>
+                                                                            </connections>
                                                                         </comboBox>
                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Wh-1B-ClT">
                                                                             <rect key="frame" x="13" y="49" width="225" height="26"/>
@@ -1322,6 +1316,9 @@ Good luck!</mutableString>
                                                                                     </items>
                                                                                 </menu>
                                                                             </popUpButtonCell>
+                                                                            <connections>
+                                                                                <action selector="fontNameChanged:" target="1Dg-LM-htQ" id="m5J-ye-dlR"/>
+                                                                            </connections>
                                                                         </popUpButton>
                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2k-HG-5SN">
                                                                             <rect key="frame" x="13" y="18" width="115" height="26"/>
@@ -1337,6 +1334,9 @@ Good luck!</mutableString>
                                                                                     </items>
                                                                                 </menu>
                                                                             </popUpButtonCell>
+                                                                            <connections>
+                                                                                <action selector="fontSubFamilyChanged:" target="1Dg-LM-htQ" id="r6W-PQ-8Nh"/>
+                                                                            </connections>
                                                                         </popUpButton>
                                                                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVH-2G-0dy">
                                                                             <rect key="frame" x="15" y="81" width="18" height="17"/>
@@ -1345,22 +1345,32 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="1Dg-LM-htQ" id="c4o-Br-aSs"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znG-v1-XJp">
+                                                                            <rect key="frame" x="35" y="74" width="200" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <buttonCell key="cell" type="bevel" title="Font" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="PpK-jY-MbH">
+                                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                                <font key="font" metaFont="systemBold"/>
+                                                                            </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="1Dg-LM-htQ" id="8Ex-RX-VgR"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="fontNamePopUp" destination="3Wh-1B-ClT" id="c2G-HZ-Uuy"/>
+                                                                        <outlet property="fontSizeComboBox" destination="IEg-AC-GVt" id="sUD-ao-x9C"/>
+                                                                        <outlet property="fontSubFamilyPopUp" destination="S2k-HG-5SN" id="qgR-1j-Bxj"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="AppearanceCellView" id="vnm-5E-Pzo" userLabel="color" customClass="SRAppearanceCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="179" width="247" height="105"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25W-hw-kxK">
-                                                                            <rect key="frame" x="34" y="91" width="132" height="19"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Focus Appearence" id="FbM-Ox-8GL">
-                                                                                <font key="font" metaFont="systemSemibold" size="14"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-mF-CrR">
                                                                             <rect key="frame" x="15" y="1" width="220" height="5"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1372,6 +1382,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="vnm-5E-Pzo" id="hK3-0J-kPz"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-HY-erm">
                                                                             <rect key="frame" x="17" y="59" width="216" height="25"/>
@@ -1383,6 +1396,9 @@ Good luck!</mutableString>
                                                                                     <segment label="Dark" width="106" selected="YES" tag="1"/>
                                                                                 </segments>
                                                                             </segmentedCell>
+                                                                            <connections>
+                                                                                <action selector="lightDarkChanged:" target="vnm-5E-Pzo" id="gXr-A0-okg"/>
+                                                                            </connections>
                                                                         </segmentedControl>
                                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrG-yg-s63">
                                                                             <rect key="frame" x="13" y="35" width="224" height="18"/>
@@ -1391,6 +1407,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="increaseContrastChanged:" target="vnm-5E-Pzo" id="vPD-KF-PaQ"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bj2-ha-g3H">
                                                                             <rect key="frame" x="13" y="15" width="224" height="18"/>
@@ -1399,22 +1418,30 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="reduceTransparencyChanged:" target="vnm-5E-Pzo" id="9ZT-0k-d4D"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jEP-qi-Yr9">
+                                                                            <rect key="frame" x="34" y="85" width="200" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <buttonCell key="cell" type="bevel" title="Focus Appearance" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="b7O-ek-djM">
+                                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                                <font key="font" metaFont="systemBold"/>
+                                                                            </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="vnm-5E-Pzo" id="AuR-Sv-s1P"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="lightDarkToggle" destination="Zjk-HY-erm" id="2Wp-LV-xZ6"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="LanguageCellView" id="JWS-fU-F6d" userLabel="language" customClass="SRLanguageCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="286" width="247" height="56"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvY-0e-cjh">
-                                                                            <rect key="frame" x="34" y="42" width="132" height="19"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Content Language" id="6ru-QB-U87">
-                                                                                <font key="font" metaFont="systemSemibold" size="14"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dln-jN-WOH">
                                                                             <rect key="frame" x="15" y="42" width="18" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1422,6 +1449,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="JWS-fU-F6d" id="YTX-Lw-jyC"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GV9-gM-7Ic">
                                                                             <rect key="frame" x="13" y="11" width="225" height="26"/>
@@ -1437,26 +1467,34 @@ Good luck!</mutableString>
                                                                                     </items>
                                                                                 </menu>
                                                                             </popUpButtonCell>
+                                                                            <connections>
+                                                                                <action selector="contentLanguageChanged:" target="JWS-fU-F6d" id="RhW-zp-81O"/>
+                                                                            </connections>
                                                                         </popUpButton>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-fv-18L">
                                                                             <rect key="frame" x="15" y="1" width="220" height="5"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-Mv-4xg">
+                                                                            <rect key="frame" x="35" y="36" width="200" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <buttonCell key="cell" type="bevel" title="Content Language" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="cyv-qD-J7N">
+                                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                                <font key="font" metaFont="systemBold"/>
+                                                                            </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="JWS-fU-F6d" id="MYI-fm-AmK"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="contentLanguagePopUp" destination="GV9-gM-7Ic" id="jHv-pb-HCw"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="WordsCellView" id="C7W-WJ-mmb" userLabel="words" customClass="SRWordsCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="344" width="247" height="56"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-2a-HkY">
-                                                                            <rect key="frame" x="34" y="42" width="132" height="19"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Words Per Roll" id="cfm-Ft-2ja">
-                                                                                <font key="font" metaFont="systemSemibold" size="14"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-Ex-dLp">
                                                                             <rect key="frame" x="15" y="42" width="18" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1464,6 +1502,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="C7W-WJ-mmb" id="MmL-cO-iAh"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6tY-57-WJf">
                                                                             <rect key="frame" x="15" y="1" width="220" height="5"/>
@@ -1482,8 +1523,25 @@ Good luck!</mutableString>
                                                                                     <segment label="5" width="40"/>
                                                                                 </segments>
                                                                             </segmentedCell>
+                                                                            <connections>
+                                                                                <action selector="wordsPerRollChanged:" target="C7W-WJ-mmb" id="5ax-dt-JUS"/>
+                                                                            </connections>
                                                                         </segmentedControl>
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-mv-nOE">
+                                                                            <rect key="frame" x="35" y="36" width="200" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <buttonCell key="cell" type="bevel" title="Words Per Roll" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="Aqo-MT-TM1">
+                                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                                <font key="font" metaFont="systemBold"/>
+                                                                            </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="collapse:" target="C7W-WJ-mmb" id="yzD-6y-oQ6"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="wordsPerRoll" destination="2ij-oa-0rK" id="MbY-TP-H4K"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="ReadCellView" id="P4Z-vX-F8d" userLabel="read" customClass="SRReadCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="402" width="247" height="64"/>
@@ -1496,6 +1554,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="system" size="12"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="readInlineClicked:" target="P4Z-vX-F8d" id="caL-km-qo0"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-ov-lo6">
                                                                             <rect key="frame" x="136" y="2" width="100" height="60"/>
@@ -1504,6 +1565,9 @@ Good luck!</mutableString>
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="system" size="12"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="readFocusedClicked:" target="P4Z-vX-F8d" id="OJs-uD-ICC"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                 </tableCellView>
