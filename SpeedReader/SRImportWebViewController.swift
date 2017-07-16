@@ -13,6 +13,8 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var urlLabel: NSTextField!
     @IBOutlet weak var titleLabel: NSTextField!
     var dotDotDotTimer: Timer?
+    var articleContent = ""
+    var articleTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,37 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
     }
     
     @IBAction func importPressed(_ sender: NSButton) {
+        if articleContent == "" || articleTitle == "" {
+            let alert = NSAlert.init()
+            alert.messageText = "Invalid URL."
+            alert.informativeText = "The URL you entered does not seem to be valid."
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            return
+        }
+        guard let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            return
+        }
+        let newArticle: Article = Article(context: context)
+        newArticle.typeOfArticle = 2
+        newArticle.webPageUrl = self.urlLabel.stringValue
+        newArticle.lastUpdated = Date.init() as NSDate
+        newArticle.webPageTitle = titleLabel.stringValue
+        newArticle.content = "\(articleTitle)\n\(articleContent)"
+        
+        let newPreference: Preference = Preference(context: context)
+        newArticle.preference = newPreference
+        
         (NSApp.delegate as? AppDelegate)?.saveAction(nil)
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseOK)
+        if let leftVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[0].viewController as? SRHistoryViewController {
+            leftVC.getAllArticles()
+        }
     }
     
     func parseWebpageAsync() {
+        articleContent = ""
+        articleTitle = ""
         dotDotDotTimer?.invalidate()
         self.titleLabel.stringValue = "Loading..."
         dotDotDotTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { (timer) in
@@ -66,29 +94,14 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
                     self.setLabelUnavailable()
                     return
                 }
-                var articleContent = ""
-                for link in doc.xpath("//p | //h1 | //h2") {
+                for link in doc.xpath("//p | //h1 | //h2 | //code") {
                     guard let text = link.text else {
                         return
                     }
-                    articleContent = articleContent + text + "\n"
-//
-//                    print(link.text)
-//                    print(link["href"])
+                    self.articleContent = self.articleContent + text + "\n"
                 }
-//                for td in body {
-//                }
                 DispatchQueue.main.async {
-                    guard let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext else {
-                        return
-                    }
-                    let newArticle: Article = Article(context: context)
-                    newArticle.typeOfArticle = 2
-                    newArticle.webPageUrl = self.urlLabel.stringValue
-                    newArticle.lastUpdated = Date.init() as NSDate
-                    newArticle.webPageTitle = title
-                    newArticle.content = "\(title)\n\(articleContent)"
-                    
+                    self.articleTitle = title
                     self.titleLabel.stringValue = title
                     self.dotDotDotTimer?.invalidate()
                 }

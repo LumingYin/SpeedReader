@@ -16,7 +16,7 @@
         <attribute name="isDark" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reduceTransparency" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.7" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="wordsPerRoll" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="preference" inverseEntity="Article" syncable="YES"/>
     </entity>
