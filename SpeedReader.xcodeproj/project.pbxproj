@@ -26,6 +26,7 @@
 		569B21D11F1B682F00D5552C /* SRWordsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D01F1B682F00D5552C /* SRWordsCellView.swift */; };
 		569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D21F1B684300D5552C /* SRReadCellView.swift */; };
 		569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */; };
+		569B21DA1F1BC5D600D5552C /* SpeedReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569B21D71F1BC4A600D5552C /* SpeedReader.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		569B21D01F1B682F00D5552C /* SRWordsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWordsCellView.swift; sourceTree = "<group>"; };
 		569B21D21F1B684300D5552C /* SRReadCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRReadCellView.swift; sourceTree = "<group>"; };
 		569B21D41F1B6A3C00D5552C /* SRGeneralPrefCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRGeneralPrefCellView.swift; sourceTree = "<group>"; };
+		569B21D81F1BC4A600D5552C /* SpeedReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeedReader.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				5697271C1F15EA56007749AA /* AppIcon.icns */,
 				5697271B1F15E655007749AA /* SpeedReader.entitlements */,
 				3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */,
+				569B21D71F1BC4A600D5552C /* SpeedReader.xcdatamodeld */,
 			);
 			path = SpeedReader;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3741C1BB1F0A873F004E9BE0 /* ArticleViewController.swift in Sources */,
+				569B21DA1F1BC5D600D5552C /* SpeedReader.xcdatamodeld in Sources */,
 				569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */,
 				569B21C71F1B65F300D5552C /* SRNewArticleViewController.swift in Sources */,
 				3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */,
@@ -366,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		569B21D71F1BC4A600D5552C /* SpeedReader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				569B21D81F1BC4A600D5552C /* SpeedReader.xcdatamodel */,
+			);
+			currentVersion = 569B21D81F1BC4A600D5552C /* SpeedReader.xcdatamodel */;
+			path = SpeedReader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3741C1AD1F0A873F004E9BE0 /* Project object */;
 }
