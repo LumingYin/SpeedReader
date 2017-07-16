@@ -15,6 +15,8 @@
 		3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */; };
 		5697271D1F15EA56007749AA /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5697271C1F15EA56007749AA /* AppIcon.icns */; };
 		569B21BD1F1B3C0700D5552C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569B21BC1F1B3C0700D5552C /* Images.xcassets */; };
+		569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */; };
+		569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		5697271B1F15E655007749AA /* SpeedReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedReader.entitlements; sourceTree = "<group>"; };
 		5697271C1F15EA56007749AA /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		569B21BC1F1B3C0700D5552C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRSplitViewController.swift; sourceTree = "<group>"; };
+		569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRPreferencesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				3741C1BA1F0A873F004E9BE0 /* SettingsViewController.swift */,
 				3741C1CB1F0A8B25004E9BE0 /* ReadViewController.swift */,
 				3741C1C91F0A8AA4004E9BE0 /* SettingsWindowController.swift */,
+				569B21BE1F1B3EF500D5552C /* SRSplitViewController.swift */,
+				569B21C01F1B489C00D5552C /* SRPreferencesViewController.swift */,
 				3741C1C71F0A89E0004E9BE0 /* ReadDetailWindow.swift */,
 				3741C1C11F0A873F004E9BE0 /* Info.plist */,
 				569B21BC1F1B3C0700D5552C /* Images.xcassets */,
@@ -154,7 +160,9 @@
 			files = (
 				3741C1BB1F0A873F004E9BE0 /* SettingsViewController.swift in Sources */,
 				3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */,
+				569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */,
 				3741C1CA1F0A8AA4004E9BE0 /* SettingsWindowController.swift in Sources */,
+				569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */,
 				3741C1C81F0A89E0004E9BE0 /* ReadDetailWindow.swift in Sources */,
 				3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */,
 			);
