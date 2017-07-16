@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SettingsViewController: NSViewController {
+class ArticleViewController: NSViewController {
     @IBOutlet weak var contentLabel: NSTextField!
     @IBOutlet var contentTextView: NSTextView!
     @IBOutlet weak var preferencesLabel: NSTextField!

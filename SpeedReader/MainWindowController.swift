@@ -1,5 +1,5 @@
 //
-//  SettingsWindowController.swift
+//  MainWindowController.swift
 //  SpeedReader
 //
 //  Created by Kay Yin on 7/3/17.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SettingsWindowController: NSWindowController, NSSharingServicePickerDelegate {
+class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     
     @IBOutlet weak var shareButton: NSButton!
     var detailWindow: ReadDetailWindow?
@@ -45,7 +45,7 @@ class SettingsWindowController: NSWindowController, NSSharingServicePickerDelega
     func openNewWindow() {
         if let contentVC = self.contentViewController as? SRSplitViewController {
             if let prefVC = contentVC.splitViewItems[2].viewController as? SRPreferencesViewController {
-                if let textVC = contentVC.splitViewItems[1].viewController as? SettingsViewController {
+                if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
                     detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
                     if let readVC = detailWindow?.contentViewController as? ReadViewController {
                         readVC.readingSliderValue = prefVC.speed
