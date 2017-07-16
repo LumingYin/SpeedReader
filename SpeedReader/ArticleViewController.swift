@@ -9,6 +9,7 @@
 import Cocoa
 
 class ArticleViewController: NSViewController {
+    var article: Article?
     @IBOutlet weak var contentLabel: NSTextField!
     @IBOutlet var contentTextView: NSTextView!
     @IBOutlet weak var preferencesLabel: NSTextField!
@@ -28,27 +29,18 @@ class ArticleViewController: NSViewController {
         
         allFontNames = NSFontManager.shared().availableFontFamilies
         contentTextView.textContainerInset = NSSize(width: 20.0, height: 20.0)
-        
-//        fontPopUp.removeAllItems()
-//        fontPopUp.addItem(withTitle: "System Font")
-//        fontPopUp.addItems(withTitles: allFontNames)
-//        self.view.layer?.backgroundColor = NSColor.white.cgColor
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
         }
     }
-
-//    @IBAction func speedReadClicked(_ sender: Any) {
-//        openNewWindow()
-//    }
     
-
-
-    
+    func updateToReflectArticle() {
+        if article != nil {
+            self.contentTextView.string = article?.content
+        }
+    }
 
 }
 

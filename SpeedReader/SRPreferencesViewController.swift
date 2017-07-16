@@ -11,6 +11,7 @@ import Cocoa
 class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet weak var tableView: NSTableView!
+    var article: Article?
     
     var speed: Float = 0.1
     var font: NSFont = NSFont.systemFont(ofSize: 24.0)
@@ -88,5 +89,10 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
     
     func updateHeight() {
         tableView.reloadData()
+    }
+    
+    func updateToReflectArticle() {
+        if article != nil {
+        }
     }
 }

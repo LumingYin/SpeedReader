@@ -34,7 +34,7 @@
                                 <rect key="frame" x="76" y="140" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Create a new blank article, then type or paste in contents to speed read." id="tub-yU-y86">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="74" y="76" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Import local Plain Text, Rich Text, Pages or PDF document to speed read." id="QBy-bG-IsE">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="74" y="8" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Import an article by pasting in an URL from the web to speed read." id="aTi-6p-mcQ">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1092,7 +1092,7 @@ Good luck!</mutableString>
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView identifier="HistoryEntryCell" focusRingType="none" id="OxI-DB-6Zf">
+                                                                <tableCellView identifier="HistoryEntryCell" focusRingType="none" id="OxI-DB-6Zf" customClass="SRArticleSnippetCellView" customModule="SpeedReader" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="1" width="197" height="75"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -1102,7 +1102,7 @@ Good luck!</mutableString>
                                                                                 <constraint firstAttribute="height" constant="37" id="Eeq-fl-SO1"/>
                                                                             </constraints>
                                                                             <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Pito pato milo mila taka tiki poulet tika Cépa lajoi démitoka lana moulé macaréna" id="Em4-hB-Wj5">
-                                                                                <font key="font" metaFont="system" size="12"/>
+                                                                                <font key="font" metaFont="cellTitle"/>
                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
@@ -1137,6 +1137,11 @@ Good luck!</mutableString>
                                                                         <constraint firstItem="QzN-on-IaB" firstAttribute="leading" secondItem="KsU-8Y-en8" secondAttribute="trailing" constant="8" id="jXB-qh-zYa"/>
                                                                         <constraint firstItem="QcP-qr-vcD" firstAttribute="leading" secondItem="KsU-8Y-en8" secondAttribute="trailing" constant="8" id="pQd-A5-Tn8"/>
                                                                     </constraints>
+                                                                    <connections>
+                                                                        <outlet property="articleSummary" destination="QcP-qr-vcD" id="PYU-1e-1ox"/>
+                                                                        <outlet property="articleTime" destination="QzN-on-IaB" id="u1E-hB-aYr"/>
+                                                                        <outlet property="iconView" destination="KsU-8Y-en8" id="HIL-pV-jx3"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
@@ -1145,7 +1150,7 @@ Good luck!</mutableString>
                                             </subviews>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9C0-cI-OPZ">
-                                            <rect key="frame" x="1" y="112" width="224.5" height="16"/>
+                                            <rect key="frame" x="1" y="112" width="225" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ZGG-fg-GkH">
@@ -1557,7 +1562,7 @@ Good luck!</mutableString>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Read Inline" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                <font key="font" metaFont="system" size="12"/>
+                                                                                <font key="font" metaFont="cellTitle"/>
                                                                             </buttonCell>
                                                                             <connections>
                                                                                 <action selector="readInlineClicked:" target="P4Z-vX-F8d" id="caL-km-qo0"/>
@@ -1568,7 +1573,7 @@ Good luck!</mutableString>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Read Focused" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" borderStyle="border" inset="2" id="75q-CO-iJ3">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                <font key="font" metaFont="system" size="12"/>
+                                                                                <font key="font" metaFont="cellTitle"/>
                                                                             </buttonCell>
                                                                             <connections>
                                                                                 <action selector="readFocusedClicked:" target="P4Z-vX-F8d" id="OJs-uD-ICC"/>

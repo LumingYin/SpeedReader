@@ -34,7 +34,7 @@ class SRNewArticleViewController: NSViewController {
             (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
             
             if let leftVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[0].viewController as? SRHistoryViewController {
-                leftVC.getAllHistory()
+                leftVC.getAllArticles()
             }
         }
         print("clicked")
