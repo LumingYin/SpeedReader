@@ -1091,7 +1091,7 @@ Gw
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-iO-WQH">
+                                        <scrollView hidden="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-iO-WQH">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
                                             <clipView key="contentView" id="UtV-aK-Hjs">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
@@ -1117,12 +1117,85 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-kB-3bZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="481"/>
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCK-fg-nV1">
+                                                    <rect key="frame" x="122" y="193" width="316" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="6WS-6c-wsE"/>
+                                                        <constraint firstAttribute="width" constant="312" id="OWQ-Jh-Kur"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="To get started with speed reading, create a new article by clicking the                button." id="vhu-aR-Ubs">
+                                                        <font key="font" metaFont="system" size="14"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oei-jA-6aR">
+                                                    <rect key="frame" x="305" y="190" width="42" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="hV8-gu-pei"/>
+                                                    </constraints>
+                                                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fPD-ZF-2GC">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="createArticle:" target="XfG-lQ-9wD" id="g9b-xN-uGy"/>
+                                                    </connections>
+                                                </button>
+                                                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="9mv-xT-bvj">
+                                                    <rect key="frame" x="153" y="238" width="254" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="9Om-zL-dD4"/>
+                                                        <constraint firstAttribute="width" constant="254" id="LWY-EV-Gfp"/>
+                                                    </constraints>
+                                                </box>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-TI-j6B">
+                                                    <rect key="frame" x="237" y="249" width="142" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="Pqa-Jd-esC"/>
+                                                        <constraint firstAttribute="width" constant="138" id="taj-go-2S2"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Welcome to  Speed Reader" id="LIk-fp-Mjz">
+                                                        <font key="font" metaFont="systemSemibold" size="19"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-Pu-kVZ">
+                                                    <rect key="frame" x="183" y="249" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="84k-gu-TDm"/>
+                                                        <constraint firstAttribute="width" constant="48" id="W16-UF-m6k"/>
+                                                    </constraints>
+                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="a5L-KY-Ln2"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bCK-fg-nV1" firstAttribute="centerX" secondItem="Fdj-kB-3bZ" secondAttribute="centerX" id="4td-16-MEQ"/>
+                                                <constraint firstItem="9mv-xT-bvj" firstAttribute="centerX" secondItem="Fdj-kB-3bZ" secondAttribute="centerX" id="5fH-Qk-VgX"/>
+                                                <constraint firstItem="bCK-fg-nV1" firstAttribute="top" secondItem="9mv-xT-bvj" secondAttribute="bottom" constant="8" id="AoG-oM-mFD"/>
+                                                <constraint firstItem="9mv-xT-bvj" firstAttribute="top" secondItem="D7y-TI-j6B" secondAttribute="bottom" constant="8" id="KPB-Ma-GhQ"/>
+                                                <constraint firstItem="oei-jA-6aR" firstAttribute="leading" secondItem="9mv-xT-bvj" secondAttribute="leading" constant="152" id="YQX-cr-NnP"/>
+                                                <constraint firstItem="9mv-xT-bvj" firstAttribute="centerY" secondItem="Fdj-kB-3bZ" secondAttribute="centerY" id="Zv3-cC-rqB"/>
+                                                <constraint firstItem="oei-jA-6aR" firstAttribute="top" secondItem="bCK-fg-nV1" secondAttribute="top" constant="18" id="bUK-sg-f9i"/>
+                                                <constraint firstItem="D7y-TI-j6B" firstAttribute="leading" secondItem="B3g-Pu-kVZ" secondAttribute="trailing" constant="8" id="fJ4-pO-hyo"/>
+                                                <constraint firstItem="D7y-TI-j6B" firstAttribute="trailing" secondItem="9mv-xT-bvj" secondAttribute="trailing" constant="-30" id="sqU-Yn-tmI"/>
+                                                <constraint firstItem="9mv-xT-bvj" firstAttribute="top" secondItem="B3g-Pu-kVZ" secondAttribute="bottom" constant="8" id="t4e-EG-YHT"/>
+                                            </constraints>
+                                        </customView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="3Pj-iO-WQH" secondAttribute="trailing" id="7C3-jm-Aba"/>
                                         <constraint firstItem="3Pj-iO-WQH" firstAttribute="leading" secondItem="sO0-Lm-CBo" secondAttribute="leading" id="E64-3G-LDg"/>
                                         <constraint firstItem="3Pj-iO-WQH" firstAttribute="top" secondItem="sO0-Lm-CBo" secondAttribute="top" id="NQG-Y8-244"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fdj-kB-3bZ" secondAttribute="trailing" id="QYq-b3-Ipr"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fdj-kB-3bZ" secondAttribute="bottom" id="Tf0-Zx-vMr"/>
+                                        <constraint firstItem="Fdj-kB-3bZ" firstAttribute="top" secondItem="sO0-Lm-CBo" secondAttribute="top" id="Yp2-dU-zT2"/>
                                         <constraint firstAttribute="bottom" secondItem="3Pj-iO-WQH" secondAttribute="bottom" id="dUw-pS-FsJ"/>
+                                        <constraint firstItem="Fdj-kB-3bZ" firstAttribute="leading" secondItem="sO0-Lm-CBo" secondAttribute="leading" id="sQw-09-D4a"/>
                                     </constraints>
                                 </view>
                                 <color key="fillColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1137,11 +1210,13 @@ Gw
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="ghx-4r-yrC" id="8oP-Eb-4Rr"/>
+                        <outlet property="guidanceView" destination="Fdj-kB-3bZ" id="XDK-1y-ulk"/>
+                        <outlet property="outerTextScrollView" destination="3Pj-iO-WQH" id="4ST-kh-FF3"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="252" y="2109"/>
+            <point key="canvasLocation" x="252" y="2108.5"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="M4Z-U1-MYW">

@@ -18,7 +18,6 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
         super.windowDidLoad()
         
         self.window?.titleVisibility = NSWindowTitleVisibility.hidden;
-//        self.window?.titlebarAppearsTransparent = true;
         self.window?.styleMask.insert(.fullSizeContentView)
         shareButton.sendAction(on: .leftMouseDown)
     }
@@ -30,21 +29,16 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     }
     
     @IBAction func addClicked(_ sender: NSView) {
-//        let popover = NSPopover()
         if let vc = storyboard?.instantiateController(withIdentifier: "BlankDocument") as? NSViewController {
-//            popover.contentViewController = vc
             self.contentViewController?.presentViewController(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.minY, behavior: .transient)
-
         }
-//        popover.behavior = .transient
-//        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge:NSRectEdge.minY)
     }
     
     @IBAction func readClicked(_ sender: Any) {
-        openNewWindow()
+        openReaderWindow()
     }
     
-    func openNewWindow() {
+    func openReaderWindow() {
         if let contentVC = self.contentViewController as? SRSplitViewController {
             if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
                 detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
@@ -87,11 +81,6 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
         if let spvc = self.contentViewController as? SRSplitViewController {
             spvc.splitViewItems[2].isCollapsed = !spvc.splitViewItems[2].isCollapsed
             sender.setSelected(!spvc.splitViewItems[2].isCollapsed, forSegment: 0)
-        }
-    }
-    @IBAction func preferencesClicked(_ sender: Any) {
-        if let spvc = self.contentViewController as? SRSplitViewController {
-            spvc.splitViewItems[2].isCollapsed = !spvc.splitViewItems[2].isCollapsed
         }
     }
     

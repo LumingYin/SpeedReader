@@ -32,6 +32,10 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         }
         if tableView != nil {
             tableView.reloadData()
+            if articles.count > 0 {
+                let indexSet = NSIndexSet(index: 0)
+                tableView.selectRowIndexes(indexSet as IndexSet, byExtendingSelection: false)
+            }
         }
     }
     
@@ -72,18 +76,24 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         let row = tableView.selectedRow
         print(tableView.selectedRow)
         if row == -1 {
+            if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+                articleVC.guidanceView.isHidden = false
+                articleVC.outerTextScrollView.isHidden = true
+            }
             return
+        } else {
+            let article = articles[row]
+            if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+                articleVC.article = article
+                articleVC.updateToReflectArticle()
+                articleVC.guidanceView.isHidden = true
+                articleVC.outerTextScrollView.isHidden = false
+            }
+            if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+                preferenceVC.article = article
+                preferenceVC.updateToReflectArticle()
+            }
         }
-        let article = articles[row]
-        if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
-            articleVC.article = article
-            articleVC.updateToReflectArticle()    
-        }
-        if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
-            preferenceVC.article = article
-            preferenceVC.updateToReflectArticle()
-        }
-
     }
     
     @IBAction func delete(_ sender: NSMenuItem) {

@@ -10,14 +10,9 @@ import Cocoa
 
 class ArticleViewController: NSViewController, NSTextViewDelegate {
     var article: Article?
-    @IBOutlet weak var contentLabel: NSTextField!
     @IBOutlet var contentTextView: NSTextView!
-    @IBOutlet weak var preferencesLabel: NSTextField!
-    @IBOutlet weak var speedLabel: NSTextField!
-    @IBOutlet weak var speedSlider: NSSlider!
-    @IBOutlet weak var fontLabel: NSTextField!
-    @IBOutlet weak var fontPopUp: NSPopUpButton!
-    @IBOutlet weak var speedReadButton: NSButton!
+    @IBOutlet weak var guidanceView: NSView!
+    @IBOutlet weak var outerTextScrollView: NSScrollView!
     
     
     var detailWindow: ReadDetailWindow?
@@ -47,6 +42,12 @@ class ArticleViewController: NSViewController, NSTextViewDelegate {
     func textDidChange(_ notification: Notification) {
         article?.content = contentTextView.string
         (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+    }
+    
+    @IBAction func createArticle(_ sender: NSButton) {
+        if let vc = storyboard?.instantiateController(withIdentifier: "BlankDocument") as? NSViewController {
+            self.presentViewController(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.maxY, behavior: .transient)
+        }
     }
 
 }
