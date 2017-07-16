@@ -40,8 +40,10 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        if articles.count == 0 {
+        if articles.count <= 0 {
             showOnboardingExperience()
+        } else {
+            hideOnboardingExperience()
         }
         return articles.count
     }
@@ -82,6 +84,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
             showOnboardingExperience()
             return
         } else {
+            hideOnboardingExperience()
             let article = articles[row]
             if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
                 articleVC.article = article
@@ -119,5 +122,12 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
             mainWindow.readButton.isEnabled = false
         }
     }
+    
+    func hideOnboardingExperience() {
+        if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+            mainWindow.readButton.isEnabled = true
+        }
+    }
+
     
 }

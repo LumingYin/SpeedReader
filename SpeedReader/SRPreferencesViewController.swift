@@ -82,7 +82,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
         } else if (row == 5) {
             return collapseWords ? 20: 56+10
         } else if (row == 6) {
-            return 75
+            return 40
         } else {
             return 95
         }

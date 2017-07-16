@@ -896,7 +896,7 @@ Gw
                         <rect key="contentRect" x="196" y="239" width="621" height="501"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="600" height="300"/>
-                        <toolbar key="toolbar" implicitIdentifier="4C82B463-6BF3-4D7F-BB95-8B9AAF382D5B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="5Vd-Xa-nFw">
+                        <toolbar key="toolbar" implicitIdentifier="4C82B463-6BF3-4D7F-BB95-8B9AAF382D5B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="5Vd-Xa-nFw">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="90454973-76C9-4289-9E87-EE4338B1FC28" label="History" paletteLabel="History" image="NSHistoryItem" id="oTY-1I-fG7">
                                     <nil key="toolTip"/>
@@ -1396,13 +1396,13 @@ Gw
                             <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="SAO-3Q-999">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                 <subviews>
-                                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="66" horizontalPageScroll="10" verticalLineScroll="66" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-hA-DbU">
+                                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="58" horizontalPageScroll="10" verticalLineScroll="58" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-hA-DbU">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                         <clipView key="contentView" focusRingType="none" id="fJM-bE-Bwf">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="64" rowSizeStyle="automatic" viewBased="YES" id="jV8-b8-vTd">
+                                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="jV8-b8-vTd">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="546"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -1757,13 +1757,13 @@ Gw
                                                                     </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="ReadCellView" id="P4Z-vX-F8d" userLabel="read" customClass="SRReadCellView" customModule="SpeedReader" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="402" width="247" height="64"/>
+                                                                    <rect key="frame" x="1" y="402" width="247" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-la-blm">
-                                                                            <rect key="frame" x="16" y="2" width="214" height="60"/>
+                                                                            <rect key="frame" x="14" y="13" width="218" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <buttonCell key="cell" type="smallSquare" title="Speed Read" bezelStyle="smallSquare" image="NSSlideshowTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
+                                                                            <buttonCell key="cell" type="roundTextured" title=" Begin Speed Read" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
@@ -1772,9 +1772,12 @@ Gw
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="speedReadButton" destination="F2H-la-blm" id="uLF-fd-Qu7"/>
+                                                                    </connections>
                                                                 </tableCellView>
                                                                 <tableCellView identifier="EmptyCellView" id="s8T-SH-xh6" userLabel="read" customClass="SRReadCellView" customModule="SpeedReader" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="468" width="247" height="64"/>
+                                                                    <rect key="frame" x="1" y="444" width="247" height="64"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
