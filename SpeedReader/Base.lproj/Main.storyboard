@@ -1293,10 +1293,6 @@ Good luck!</mutableString>
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                                <objectValues>
-                                                                                    <string>9</string>
-                                                                                    <string>10</string>
-                                                                                </objectValues>
                                                                             </comboBoxCell>
                                                                             <connections>
                                                                                 <action selector="fontSizeChanged:" target="1Dg-LM-htQ" id="ycA-lL-VvX"/>
