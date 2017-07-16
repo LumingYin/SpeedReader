@@ -17,22 +17,11 @@ class SRLanguageCellView: SRGeneralPrefCellView {
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
-        // Drawing code here.
     }
     
+    
+    
     @IBAction func contentLanguageChanged(_ sender: NSPopUpButton) {
-                if let article = delegate?.parent?.childViewControllers[1] as? SpeedReader.ArticleViewController {
-                    var text = article.contentTextView.string
-                    var tagSchemes = [NSLinguisticTagSchemeLanguage]
-                    var tagger = NSLinguisticTagger.init(tagSchemes: tagSchemes, options: 0)
-                    tagger.string = text
-                    var pointer: NSRangePointer?
-                    var range: NSRangePointer?
-                    var language = tagger.tag(at: 0, scheme: NSLinguisticTagSchemeLanguage, tokenRange: pointer, sentenceRange: range)
-                    print("language is likely \(language)")
-                }
-
     }
     
     @IBAction func collapse(_ sender: NSButton) {
@@ -50,13 +39,21 @@ class SRLanguageCellView: SRGeneralPrefCellView {
         }
     }
     
-    //    NSArray *tagschemes = [NSArray arrayWithObjects:NSLinguisticTagSchemeLanguage, nil];
-    //    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:tagschemes options:0];
-    //    [tagger setString:@"Das ist ein bisschen deutscher Text. Bitte löschen Sie diesen nicht."];
-    //    NSString *language = [tagger tagAtIndex:0 scheme:NSLinguisticTagSchemeLanguage tokenRange:NULL sentenceRange:NULL];
-
-    
     override func configure() {
+        if let language = self.delegate?.article?.content?.guessLanguage() {
+            contentLanguagePopUp.removeAllItems()
+            contentLanguagePopUp.addItem(withTitle: language)
+        }
     }
-
 }
+
+extension String {
+    func guessLanguage() -> String {
+        let length = self.utf16.count
+        let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
+        
+        let locale = Locale(identifier: languageCode)
+        return locale.localizedString(forLanguageCode: languageCode) ?? "Unknown"
+    }
+}
+

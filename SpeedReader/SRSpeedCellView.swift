@@ -20,7 +20,6 @@ class SRSpeedCellView: SRGeneralPrefCellView {
     }
     
     @IBAction func speedChanged(_ sender: NSSlider) {
-        delegate?.speed = sender.floatValue
         delegate?.article?.preference?.speed = sender.floatValue
         (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
     }

@@ -111,7 +111,6 @@ class SRFontCellView: SRGeneralPrefCellView {
         if let n = NumberFormatter().number(from: fontSizeComboBox.stringValue) {
             let floatSize = CGFloat(n)
             if let desiredFont = NSFont.init(name: fontPostScriptArray[fontSubFamilyPopUp.indexOfSelectedItem], size: floatSize) {
-                self.delegate?.font = desiredFont
                 self.delegate?.article?.preference?.font = desiredFont
                 (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
             }

@@ -1440,7 +1440,9 @@ Good luck!</mutableString>
                                                                     </subviews>
                                                                     <connections>
                                                                         <outlet property="disclosureTriangle" destination="jH5-lA-5Ir" id="V5I-4h-7XA"/>
+                                                                        <outlet property="increaseContrastBtn" destination="xrG-yg-s63" id="AYo-P1-leO"/>
                                                                         <outlet property="lightDarkToggle" destination="Zjk-HY-erm" id="2Wp-LV-xZ6"/>
+                                                                        <outlet property="reduceTransparencyBtn" destination="bj2-ha-g3H" id="obr-oe-wtc"/>
                                                                         <outlet property="topLabel" destination="jEP-qi-Yr9" id="7ax-8f-k8b"/>
                                                                     </connections>
                                                                 </tableCellView>

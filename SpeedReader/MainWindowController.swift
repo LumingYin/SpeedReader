@@ -44,17 +44,23 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     
     func openNewWindow() {
         if let contentVC = self.contentViewController as? SRSplitViewController {
-            if let prefVC = contentVC.splitViewItems[2].viewController as? SRPreferencesViewController {
-                if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
-                    detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
-                    if let readVC = detailWindow?.contentViewController as? ReadViewController {
-                        readVC.readingSliderValue = prefVC.speed
+            if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
+                detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
+                if let readVC = detailWindow?.contentViewController as? ReadViewController {
+                    if let article = textVC.article {
+                        if let speed = article.preference?.speed {
+                            readVC.readingSliderValue = speed
+                        }
                         readVC.textToRead = textVC.contentTextView.string
-                        readVC.font = prefVC.font
-                        readVC.enableDark = prefVC.enableDark
+                        if let font = article.preference?.font as? NSFont {
+                            readVC.font = font
+                        }
+                        if let isDark = article.preference?.isDark {
+                            readVC.enableDark = isDark
+                        }
                     }
-                    detailWindow?.showWindow(self)
                 }
+                detailWindow?.showWindow(self)
             }
         }
     }
