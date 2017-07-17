@@ -894,9 +894,9 @@ Gw
                 <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="SpeedReader" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Speed Reader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
-                        <rect key="contentRect" x="196" y="239" width="621" height="501"/>
+                        <rect key="contentRect" x="196" y="239" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="600" height="300"/>
+                        <value key="minSize" type="size" width="800" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="4C82B463-6BF3-4D7F-BB95-8B9AAF382D5B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="5Vd-Xa-nFw">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="90454973-76C9-4289-9E87-EE4338B1FC28" label="History" paletteLabel="History" image="NSHistoryItem" id="oTY-1I-fG7">
@@ -1208,6 +1208,9 @@ Gw
                                         <constraint firstItem="Fdj-kB-3bZ" firstAttribute="leading" secondItem="sO0-Lm-CBo" secondAttribute="leading" id="sQw-09-D4a"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="CWE-ho-w6W"/>
+                                </constraints>
                                 <color key="fillColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </box>
                         </subviews>
@@ -1510,7 +1513,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-c2-Zv0">
-                                                                            <rect key="frame" x="15" y="1" width="220" height="4"/>
+                                                                            <rect key="frame" x="15" y="1" width="220" height="5"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         </box>
                                                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-AC-GVt">
