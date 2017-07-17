@@ -40,11 +40,11 @@ class SRNewArticleViewController: NSViewController {
             
             presenting?.dismissViewController(self)
         }
-        print("clicked")
+//        print("clicked")
     }
     
     @IBAction func importArticleClicked(_ sender: NSButton) {
-        print("clicked")
+//        print("clicked")
         let openPanel = NSOpenPanel();
         openPanel.allowsMultipleSelection = false;
         openPanel.canChooseDirectories = false;
@@ -58,13 +58,13 @@ class SRNewArticleViewController: NSViewController {
                 }
                 self.createArticleBasedOnFileURL(fileURL)
             } else {
-                print("open cancelled")
+//                print("open cancelled")
             }
         }
     }
     
     func createArticleBasedOnFileURL(_ fileURL: URL) {
-        print("Opened \(String(describing: fileURL))")
+//        print("Opened \(String(describing: fileURL))")
         let normalizedExtension = fileURL.pathExtension.lowercased()
         guard let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext else {
             return
@@ -101,16 +101,16 @@ class SRNewArticleViewController: NSViewController {
     }
     
     @IBAction func importURLClicked(_ sender: NSButton) {
-        print("clicked")
+//        print("clicked")
         if let webWindow = (storyboard?.instantiateController(withIdentifier: "OpenWebWindow") as? NSWindowController)?.window {
             NSApp.mainWindow?.beginSheet(webWindow, completionHandler: { (response: NSModalResponse) in
-                print("sheet closed")
+//                print("sheet closed")
                 if (response == NSModalResponseOK) {
                     if let webImport = webWindow.contentViewController as? SRImportWebViewController {
                         print("dismissed with url to import: \(webImport.urlLabel.stringValue)")
                     }
                 } else if (response == NSModalResponseCancel) {
-                    print("cancelled")
+//                    print("cancelled")
                 }
             })
         }

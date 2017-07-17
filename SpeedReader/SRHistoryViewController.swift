@@ -41,7 +41,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
                     }
                 }
             } catch {
-                print("Fetch article failed")
+//                print("Fetch article failed")
             }
         }
     }
@@ -118,7 +118,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     @IBAction func delete(_ sender: NSMenuItem) {
-        print(tableView.clickedRow)
+//        print(tableView.clickedRow)
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
             context.delete(articles[tableView.clickedRow])
             (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)

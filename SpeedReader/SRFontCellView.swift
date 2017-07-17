@@ -75,7 +75,7 @@ class SRFontCellView: SRGeneralPrefCellView {
         fontSizeComboBox.selectItem(at: 2)
         
         if let chosenFont = self.delegate?.article?.preference?.font as? NSFont {
-            Swift.print("\(chosenFont)")
+//            Swift.print("\(chosenFont)")
             if let familyName = chosenFont.familyName {
                 if familyName.contains(".SF") {
                     fontNamePopUp.selectItem(withTitle: "System Font")
