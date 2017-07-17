@@ -18,7 +18,7 @@ Focus View:
 Preferences:
 - All preferences are located in a single pane, allowing you to tune the speed, font, focus appearance, content language, words per roll and quickly start your speed read session
 
---
+---
 
 [Download from Mac App Store](https://itunes.apple.com/us/app/speed-reader/id1258448209?mt=12)
 
