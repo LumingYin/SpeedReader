@@ -40,11 +40,14 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     }
     
     func openReaderWindow() {
+        detailWindow = nil
         if let contentVC = self.contentViewController as? SRSplitViewController {
             if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
                 detailWindow = storyboard?.instantiateController(withIdentifier: "ReadDetailWindow") as? ReadDetailWindow
                 if let readVC = detailWindow?.contentViewController as? ReadViewController {
                     if let article = textVC.article {
+                        readVC.article = article
+                        readVC.articlePreference = article.preference
                         if let speed = article.preference?.speed {
                             readVC.readingSliderValue = speed
                         }

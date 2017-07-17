@@ -28,7 +28,6 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
     
     
     @IBAction func cancelPressed(_ sender: NSButton) {
-        (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext.reset()
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseCancel)
     }
     
@@ -49,7 +48,7 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
         newArticle.webPageUrl = self.urlLabel.stringValue
         newArticle.lastUpdated = Date.init() as NSDate
         newArticle.webPageTitle = titleLabel.stringValue
-        newArticle.content = "\(articleTitle)\n\(articleContent)"
+        newArticle.content = "\(articleContent)"
         
         let newPreference: Preference = Preference(context: context)
         newArticle.preference = newPreference

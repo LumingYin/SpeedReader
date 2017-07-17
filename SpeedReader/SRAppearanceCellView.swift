@@ -79,7 +79,7 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
         if sender.state == NSOnState {
             self.delegate?.article?.preference?.reduceTransparency = true
         } else {
-            self.delegate?.article?.preference?.reduceTransparency = true
+            self.delegate?.article?.preference?.reduceTransparency = false
         }
         (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
     }
