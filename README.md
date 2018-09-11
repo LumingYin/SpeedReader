@@ -2,9 +2,9 @@
 
 Ever wondered if you can read faster? Try Speed Reader! 
 
-Paste in an article you would like to read, adjust the speed reading rate and choose your favorite font, then Speed Read it with the power of silencing vocalization!
+Now updated for Dark Mode under macOS Mojave, simply paste in an article you would like to read, adjust the speed reading rate and choose your favorite font, then Speed Read it with the power of silencing vocalization!
 
-![Speed Reader](speedreader.gif?raw=true "Speed Reader")
+![Speed Reader](speedreader_dark.gif?raw=true "Speed Reader")
 
 Article Library:
 - Organize, preview and open all articles you have speed read at a glance
