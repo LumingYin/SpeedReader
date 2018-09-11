@@ -10,6 +10,8 @@ import Cocoa
 
 class ArticleViewController: NSViewController, NSTextViewDelegate {
     var article: Article?
+    var observer: NSKeyValueObservation?
+    
     @IBOutlet var contentTextView: NSTextView!
     @IBOutlet weak var guidanceView: NSView!
     @IBOutlet weak var outerTextScrollView: NSScrollView!
@@ -23,8 +25,23 @@ class ArticleViewController: NSViewController, NSTextViewDelegate {
         self.view.wantsLayer = true
         
         allFontNames = NSFontManager.shared.availableFontFamilies
+        
+        observer = view.observe(\.effectiveAppearance) { [weak self] _, _  in
+            self?.updateAppearanceRelatedChanges()
+        }
+
         contentTextView.textContainerInset = NSSize(width: 20.0, height: 20.0)
         contentTextView.delegate = self
+    }
+    
+    private func updateAppearanceRelatedChanges() {
+        if #available(OSX 10.14, *) {
+            switch view.effectiveAppearance.bestMatch(from: [.aqua, .darkAqua]) {
+            case .aqua?: contentTextView.drawsBackground = true
+            case .darkAqua?: contentTextView.drawsBackground = false
+            default: contentTextView.drawsBackground = true
+            }
+        }
     }
 
     override var representedObject: Any? {
