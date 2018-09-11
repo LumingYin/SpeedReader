@@ -17,7 +17,7 @@ class SRFontCellView: SRGeneralPrefCellView {
     @IBOutlet weak var fontSizeComboBox: NSComboBox!
     var fontPostScriptArray: [String] = []
     
-    let allFontNames = NSFontManager.shared().availableFontFamilies
+    let allFontNames = NSFontManager.shared.availableFontFamilies
     let allFontSizes = [24, 36, 48, 64, 72, 96]
 
     override func draw(_ dirtyRect: NSRect) {
@@ -41,10 +41,10 @@ class SRFontCellView: SRGeneralPrefCellView {
     
     @IBAction func collapse(_ sender: NSButton) {
         if (sender != disclosureTriangle) {
-            if (disclosureTriangle.state == NSOnState) {
-                disclosureTriangle.state = NSOffState
+            if (disclosureTriangle.state == .on) {
+                disclosureTriangle.state = .on
             } else {
-                disclosureTriangle.state = NSOnState
+                disclosureTriangle.state = .on
             }
         }
 
@@ -101,7 +101,7 @@ class SRFontCellView: SRGeneralPrefCellView {
     func updateSubFamily() {
         fontSubFamilyPopUp.removeAllItems()
         if let selectedFamily = fontNamePopUp.titleOfSelectedItem {
-            if let arrayofSubs = NSFontManager.shared().availableMembers(ofFontFamily: selectedFamily)  {
+            if let arrayofSubs = NSFontManager.shared.availableMembers(ofFontFamily: selectedFamily)  {
                 var resultingSub:[String] = []
                 fontPostScriptArray = []
                 for i in 0..<arrayofSubs.count {
@@ -119,10 +119,10 @@ class SRFontCellView: SRGeneralPrefCellView {
     
     func updateFontInDelegate() {
         if let n = NumberFormatter().number(from: fontSizeComboBox.stringValue) {
-            let floatSize = CGFloat(n)
+            let floatSize = CGFloat(truncating: n)
             if let desiredFont = NSFont.init(name: fontPostScriptArray[fontSubFamilyPopUp.indexOfSelectedItem], size: floatSize) {
                 self.delegate?.article?.preference?.font = desiredFont
-                (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+                (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
             }
         }
     }

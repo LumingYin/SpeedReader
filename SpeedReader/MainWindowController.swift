@@ -18,7 +18,7 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        self.window?.titleVisibility = NSWindowTitleVisibility.hidden;
+        self.window?.titleVisibility = NSWindow.TitleVisibility.hidden;
         self.window?.styleMask.insert(.fullSizeContentView)
         shareButton.sendAction(on: .leftMouseDown)
     }
@@ -31,7 +31,7 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
     
     @IBAction func addClicked(_ sender: NSView) {
         if let vc = storyboard?.instantiateController(withIdentifier: "BlankDocument") as? NSViewController {
-            self.contentViewController?.presentViewController(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.minY, behavior: .transient)
+            self.contentViewController?.present(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.minY, behavior: .transient)
         }
     }
     
@@ -70,9 +70,8 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
         var shareArray: [String] = []
         if let contentVC = self.contentViewController as? SRSplitViewController {
             if let textVC = contentVC.splitViewItems[1].viewController as? ArticleViewController {
-                if let article = textVC.contentTextView.string {
-                    shareArray.append(article)
-                }
+                let article = textVC.contentTextView.string
+                shareArray.append(article)
             }
         }
         let sharePicker = NSSharingServicePicker.init(items: shareArray)

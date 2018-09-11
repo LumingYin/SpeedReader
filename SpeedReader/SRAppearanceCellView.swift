@@ -41,17 +41,17 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
         
         if let increaseContrast = self.delegate?.article?.preference?.increaseContrast {
             if increaseContrast {
-                increaseContrastBtn.state = NSOnState
+                increaseContrastBtn.state = .on
             } else {
-                increaseContrastBtn.state = NSOffState
+                increaseContrastBtn.state = .on
             }
         }
 
         if let reduceTransparency = self.delegate?.article?.preference?.reduceTransparency {
             if reduceTransparency {
-                reduceTransparencyBtn.state = NSOnState
+                reduceTransparencyBtn.state = .on
             } else {
-                reduceTransparencyBtn.state = NSOffState
+                reduceTransparencyBtn.state = .on
             }
         }
 
@@ -63,33 +63,33 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
         } else {
             self.delegate?.article?.preference?.isDark = true
         }
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func increaseContrastChanged(_ sender: NSButton) {
-        if sender.state == NSOnState {
+        if sender.state == .on {
             self.delegate?.article?.preference?.increaseContrast = true
         } else {
             self.delegate?.article?.preference?.increaseContrast = false
         }
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func reduceTransparencyChanged(_ sender: NSButton) {
-        if sender.state == NSOnState {
+        if sender.state == .on {
             self.delegate?.article?.preference?.reduceTransparency = true
         } else {
             self.delegate?.article?.preference?.reduceTransparency = false
         }
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func collapse(_ sender: NSButton) {
         if (sender != disclosureTriangle) {
-            if (disclosureTriangle.state == NSOnState) {
-                disclosureTriangle.state = NSOffState
+            if (disclosureTriangle.state == .on) {
+                disclosureTriangle.state = .on
             } else {
-                disclosureTriangle.state = NSOnState
+                disclosureTriangle.state = .on
             }
         }
 

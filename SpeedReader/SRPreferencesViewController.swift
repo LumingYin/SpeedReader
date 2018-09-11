@@ -59,7 +59,7 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
         default:
             identifier = "SpeedCellView"
         }
-        if let cell = tableView.make(withIdentifier: identifier, owner: self) as? SRGeneralPrefCellView {
+        if let cell = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier(identifier), owner: self) as? SRGeneralPrefCellView {
             cell.delegate = self
             cell.configure()
             return cell
@@ -101,4 +101,9 @@ class SRPreferencesViewController: NSViewController, NSTableViewDelegate, NSTabl
             tableView.reloadData()
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSUserInterfaceItemIdentifier(_ input: String) -> NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier(rawValue: input)
 }

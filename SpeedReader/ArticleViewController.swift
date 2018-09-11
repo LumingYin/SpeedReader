@@ -22,7 +22,7 @@ class ArticleViewController: NSViewController, NSTextViewDelegate {
         super.viewDidLoad()
         self.view.wantsLayer = true
         
-        allFontNames = NSFontManager.shared().availableFontFamilies
+        allFontNames = NSFontManager.shared.availableFontFamilies
         contentTextView.textContainerInset = NSSize(width: 20.0, height: 20.0)
         contentTextView.delegate = self
     }
@@ -34,19 +34,19 @@ class ArticleViewController: NSViewController, NSTextViewDelegate {
     
     func updateToReflectArticle() {
         if article != nil {
-            self.contentTextView.string = article?.content
+            self.contentTextView.string = article?.content ?? ""
             self.contentTextView.scroll(CGPoint(x: 0, y: -50))
         }
     }
     
     func textDidChange(_ notification: Notification) {
         article?.content = contentTextView.string
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func createArticle(_ sender: NSButton) {
         if let vc = storyboard?.instantiateController(withIdentifier: "BlankDocument") as? NSViewController {
-            self.presentViewController(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.maxY, behavior: .transient)
+            self.present(vc, asPopoverRelativeTo: sender.bounds, of: sender, preferredEdge: NSRectEdge.maxY, behavior: .transient)
         }
     }
 

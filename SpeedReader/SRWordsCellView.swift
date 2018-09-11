@@ -34,15 +34,15 @@ class SRWordsCellView: SRGeneralPrefCellView {
     
     @IBAction func wordsPerRollChanged(_ sender: NSSegmentedControl) {
         self.delegate?.article?.preference?.wordsPerRoll = Int16(sender.selectedSegment + 1)
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func collapse(_ sender: NSButton) {
         if (sender != disclosureTriangle) {
-            if (disclosureTriangle.state == NSOnState) {
-                disclosureTriangle.state = NSOffState
+            if (disclosureTriangle.state == .on) {
+                disclosureTriangle.state = .on
             } else {
-                disclosureTriangle.state = NSOnState
+                disclosureTriangle.state = .on
             }
         }
         if let delegate = delegate {

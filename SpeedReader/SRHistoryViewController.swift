@@ -23,7 +23,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func getAllArticles() {
-        if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             do {
                 let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastUpdated", ascending: false)]
@@ -69,7 +69,7 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let view = tableView.make(withIdentifier: "HistoryEntryCell", owner: self) as? SRArticleSnippetCellView {
+        if let view = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier("HistoryEntryCell"), owner: self) as? SRArticleSnippetCellView {
             let article = articles[row]
             if let time = article.lastUpdated {
                 view.articleTime.stringValue = time.description
@@ -104,13 +104,13 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
         } else {
             hideOnboardingExperience()
             let article = articles[selectedRow]
-            if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+            if let articleVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
                 articleVC.article = article
                 articleVC.updateToReflectArticle()
                 articleVC.guidanceView.isHidden = true
                 articleVC.outerTextScrollView.isHidden = false
             }
-            if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+            if let preferenceVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
                 preferenceVC.article = article
                 preferenceVC.updateToReflectArticle()
             }
@@ -119,41 +119,46 @@ class SRHistoryViewController: NSViewController, NSTableViewDataSource, NSTableV
     
     @IBAction func delete(_ sender: NSMenuItem) {
 //        print(tableView.clickedRow)
-        if let context = (NSApplication.shared().delegate as? AppDelegate)?.persistentContainer.viewContext {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             context.delete(articles[tableView.clickedRow])
-            (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+            (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
             getAllArticles()
         }
     }
     
     func showOnboardingExperience() {
-        if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+        if let articleVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
             articleVC.article = nil
             articleVC.guidanceView.isHidden = false
             articleVC.outerTextScrollView.isHidden = true
         }
-        if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+        if let preferenceVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
             preferenceVC.article = nil
             preferenceVC.tableView.reloadData()
         }
-        if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+        if let mainWindow = NSApplication.shared.mainWindow?.windowController as? MainWindowController {
             mainWindow.readButton.isEnabled = false
         }
     }
     
     func hideOnboardingExperience() {
-        if let articleVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
+        if let articleVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[1].viewController as? ArticleViewController {
             articleVC.guidanceView.isHidden = true
             articleVC.outerTextScrollView.isHidden = false
 //            articleVC.contentTextView.string = articleVC.article?.content
         }
-        if let preferenceVC = (NSApplication.shared().mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
+        if let preferenceVC = (NSApplication.shared.mainWindow?.contentViewController as? SRSplitViewController)?.splitViewItems[2].viewController as? SRPreferencesViewController {
             preferenceVC.tableView.reloadData()
         }
-        if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+        if let mainWindow = NSApplication.shared.mainWindow?.windowController as? MainWindowController {
             mainWindow.readButton.isEnabled = true
         }
     }
 
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSUserInterfaceItemIdentifier(_ input: String) -> NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier(rawValue: input)
 }

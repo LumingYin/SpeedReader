@@ -31,7 +31,11 @@ class SRTableRowView: NSTableRowView {
         if self.selectionHighlightStyle != .none {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
             NSColor(calibratedWhite: 1, alpha: 0).setStroke()
-            NSColor(calibratedRed: 0.9882, green: 0.8941, blue: 0.607, alpha: 1).setFill()
+            if #available(OSX 10.14, *) {
+                NSColor.selectedContentBackgroundColor.setFill()
+            } else {
+                NSColor(calibratedRed: 0.9882, green: 0.8941, blue: 0.607, alpha: 1).setFill()
+            }
             let selectionPath = NSBezierPath.init(roundedRect: selectionRect, xRadius: 0, yRadius: 0)
             selectionPath.fill()
             selectionPath.stroke()

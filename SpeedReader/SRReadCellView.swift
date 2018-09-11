@@ -28,7 +28,7 @@ class SRReadCellView: SRGeneralPrefCellView {
     }
     
     @IBAction func readInlineClicked(_ sender: Any) {
-        if let mainWindow = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+        if let mainWindow = NSApplication.shared.mainWindow?.windowController as? MainWindowController {
             mainWindow.openReaderWindow()
         }
     }

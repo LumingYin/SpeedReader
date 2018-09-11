@@ -13,7 +13,7 @@ class ReadDetailWindow: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     
-        self.window?.titleVisibility = NSWindowTitleVisibility.hidden;
+        self.window?.titleVisibility = NSWindow.TitleVisibility.hidden;
         self.window?.titlebarAppearsTransparent = true;
         self.window?.styleMask.insert(.fullSizeContentView)
 

@@ -56,16 +56,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
         let context = persistentContainer.viewContext
         
-        if !context.commitEditing() {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-        }
+//        if !context.commitEditing() {
+//            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
+//        }
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
                 // Customize this code block to include application-specific recovery steps.
                 let nserror = error as NSError
-                NSApplication.shared().presentError(nserror)
+                NSApplication.shared.presentError(nserror)
             }
         }
     }
@@ -75,14 +75,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return persistentContainer.viewContext.undoManager
     }
     
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplicationTerminateReply {
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         // Save changes in the application's managed object context before the application terminates.
         let context = persistentContainer.viewContext
         
-        if !context.commitEditing() {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
-            return .terminateCancel
-        }
+//        if !context.commitEditing() {
+//            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
+//            return .terminateCancel
+//        }
         
         if !context.hasChanges {
             return .terminateNow
@@ -110,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             alert.addButton(withTitle: cancelButton)
             
             let answer = alert.runModal()
-            if answer == NSAlertSecondButtonReturn {
+            if answer == NSApplication.ModalResponse.alertSecondButtonReturn {
                 return .terminateCancel
             }
         }

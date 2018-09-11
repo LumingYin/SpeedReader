@@ -21,15 +21,15 @@ class SRSpeedCellView: SRGeneralPrefCellView {
     
     @IBAction func speedChanged(_ sender: NSSlider) {
         delegate?.article?.preference?.speed = sender.floatValue
-        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
     }
     
     @IBAction func collapse(_ sender: NSButton) {
         if (sender != disclosureTriangle) {
-            if (disclosureTriangle.state == NSOnState) {
-                disclosureTriangle.state = NSOffState
+            if (disclosureTriangle.state == .on) {
+                disclosureTriangle.state = .on
             } else {
-                disclosureTriangle.state = NSOnState
+                disclosureTriangle.state = .on
             }
         }
 
