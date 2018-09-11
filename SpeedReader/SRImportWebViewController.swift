@@ -60,52 +60,55 @@ class SRImportWebViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func parseWebpageAsync() {
-//        articleContent = ""
-//        articleTitle = ""
-//        dotDotDotTimer?.invalidate()
-//        self.titleLabel.stringValue = "Loading..."
-//        dotDotDotTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { (timer) in
-//            if self.titleLabel.stringValue.contains("...") {
-//                self.titleLabel.stringValue = "Loading"
-//            } else if self.titleLabel.stringValue.contains("..") {
-//                self.titleLabel.stringValue = "Loading..."
-//            } else if self.titleLabel.stringValue.contains(".") {
-//                self.titleLabel.stringValue = "Loading.."
-//            } else {
-//                self.titleLabel.stringValue = "Loading."
-//            }
-//        })
-//        guard let url = URL(string: urlLabel.stringValue) else {
-//            self.titleLabel.stringValue = "Invalid Web URL"
-//            self.dotDotDotTimer?.invalidate()
-//            return
-//        }
-//        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-//            if error != nil {
-//                print("\(String(describing: error))")
-//                self.setLabelUnavailable()
-//            } else {
-//                guard let data = data,
-//                    let html:String = String(data: data, encoding: String.Encoding.utf8),
-//                    let doc = HTML(html: html, encoding: .utf8),
-//                    let title = doc.title else {
-//                    self.setLabelUnavailable()
-//                    return
-//                }
-//                for link in doc.xpath("//p | //h1 | //h2 | //code") {
-//                    guard let text = link.text else {
-//                        return
-//                    }
-//                    self.articleContent = self.articleContent + text + "\n"
-//                }
-//                DispatchQueue.main.async {
-//                    self.articleTitle = title
-//                    self.titleLabel.stringValue = title
-//                    self.dotDotDotTimer?.invalidate()
-//                }
-//
-//            }
-//            }.resume()
+        articleContent = ""
+        articleTitle = ""
+        dotDotDotTimer?.invalidate()
+        self.titleLabel.stringValue = "Loading..."
+        dotDotDotTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { (timer) in
+            if self.titleLabel.stringValue.contains("...") {
+                self.titleLabel.stringValue = "Loading"
+            } else if self.titleLabel.stringValue.contains("..") {
+                self.titleLabel.stringValue = "Loading..."
+            } else if self.titleLabel.stringValue.contains(".") {
+                self.titleLabel.stringValue = "Loading.."
+            } else {
+                self.titleLabel.stringValue = "Loading."
+            }
+        })
+        guard let url = URL(string: urlLabel.stringValue) else {
+            self.titleLabel.stringValue = "Invalid Web URL"
+            self.dotDotDotTimer?.invalidate()
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                print("\(String(describing: error))")
+                self.setLabelUnavailable()
+            } else {
+                guard let data = data,
+                    let html:String = String(data: data, encoding: String.Encoding.utf8) else {
+                        return
+                }
+                do {
+                    let doc = try HTML(html: html, encoding: .utf8)
+                    let title = doc.title
+                    for link in doc.xpath("//p | //h1 | //h2 | //code") {
+                        guard let text = link.text else {
+                            return
+                        }
+                        self.articleContent = self.articleContent + text + "\n"
+                    }
+                    DispatchQueue.main.async {
+                        self.articleTitle = title ?? ""
+                        self.titleLabel.stringValue = title ?? ""
+                        self.dotDotDotTimer?.invalidate()
+                    }
+                } catch {
+                    self.setLabelUnavailable()
+                }
+
+            }
+            }.resume()
     }
     
     func setLabelUnavailable() {

@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3206308D21477A4500D27B73 /* EmptyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3206308C21477A4500D27B73 /* EmptyObject.m */; };
+		32768ECE214785B5006004CB /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768EC621478505006004CB /* libxmlHTMLNode.swift */; };
+		32768ECF214785B7006004CB /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768EC721478505006004CB /* CSS.swift */; };
+		32768ED0214785B9006004CB /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768EC821478505006004CB /* libxmlHTMLDocument.swift */; };
+		32768ED1214785BA006004CB /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768EC921478505006004CB /* libxmlParserOption.swift */; };
+		32768ED2214785BC006004CB /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768ECA21478505006004CB /* Deprecated.swift */; };
+		32768ED3214785BD006004CB /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768ECC21478505006004CB /* Kanna.swift */; };
 		3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */; };
 		3741C1BB1F0A873F004E9BE0 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */; };
 		3741C1C01F0A873F004E9BE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3741C1BE1F0A873F004E9BE0 /* Main.storyboard */; };
@@ -36,8 +41,12 @@
 
 /* Begin PBXFileReference section */
 		3206308A21477A4500D27B73 /* SpeedReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeedReader-Bridging-Header.h"; sourceTree = "<group>"; };
-		3206308B21477A4500D27B73 /* EmptyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyObject.h; sourceTree = "<group>"; };
-		3206308C21477A4500D27B73 /* EmptyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyObject.m; sourceTree = "<group>"; };
+		32768EC621478505006004CB /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libxmlHTMLNode.swift; sourceTree = "<group>"; };
+		32768EC721478505006004CB /* CSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
+		32768EC821478505006004CB /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		32768EC921478505006004CB /* libxmlParserOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libxmlParserOption.swift; sourceTree = "<group>"; };
+		32768ECA21478505006004CB /* Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
+		32768ECC21478505006004CB /* Kanna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanna.swift; sourceTree = "<group>"; };
 		3741C1B51F0A873F004E9BE0 /* SpeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -85,9 +94,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		32768EC521478505006004CB /* Kanna */ = {
+			isa = PBXGroup;
+			children = (
+				32768EC621478505006004CB /* libxmlHTMLNode.swift */,
+				32768EC721478505006004CB /* CSS.swift */,
+				32768EC821478505006004CB /* libxmlHTMLDocument.swift */,
+				32768EC921478505006004CB /* libxmlParserOption.swift */,
+				32768ECA21478505006004CB /* Deprecated.swift */,
+				32768ECC21478505006004CB /* Kanna.swift */,
+			);
+			path = Kanna;
+			sourceTree = "<group>";
+		};
 		3741C1AC1F0A873F004E9BE0 = {
 			isa = PBXGroup;
 			children = (
+				32768EC521478505006004CB /* Kanna */,
 				3741C1B71F0A873F004E9BE0 /* SpeedReader */,
 				3741C1B61F0A873F004E9BE0 /* Products */,
 				1259B537378C67F201272C9D /* Frameworks */,
@@ -108,8 +131,6 @@
 				569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */,
 				3741C1BE1F0A873F004E9BE0 /* Main.storyboard */,
 				569724271F1BEC4500D9E7C7 /* SRImportWebViewController.swift */,
-				3206308B21477A4500D27B73 /* EmptyObject.h */,
-				3206308C21477A4500D27B73 /* EmptyObject.m */,
 				569724251F1BEBC200D9E7C7 /* SRModalWindowController.swift */,
 				5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */,
 				3741C1C91F0A8AA4004E9BE0 /* MainWindowController.swift */,
@@ -229,23 +250,28 @@
 				569B21DA1F1BC5D600D5552C /* SpeedReader.xcdatamodeld in Sources */,
 				569B21D51F1B6A3C00D5552C /* SRGeneralPrefCellView.swift in Sources */,
 				569B21C71F1B65F300D5552C /* SRNewArticleViewController.swift in Sources */,
+				32768ED2214785BC006004CB /* Deprecated.swift in Sources */,
 				569724201F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift in Sources */,
 				3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */,
 				569724261F1BEBC200D9E7C7 /* SRModalWindowController.swift in Sources */,
 				569B21CF1F1B682200D5552C /* SRLanguageCellView.swift in Sources */,
 				569B21CB1F1B680200D5552C /* SRFontCellView.swift in Sources */,
 				569B21BF1F1B3EF500D5552C /* SRSplitViewController.swift in Sources */,
+				32768ED1214785BA006004CB /* libxmlParserOption.swift in Sources */,
 				3741C1CA1F0A8AA4004E9BE0 /* MainWindowController.swift in Sources */,
 				569B21D11F1B682F00D5552C /* SRWordsCellView.swift in Sources */,
 				569B21D31F1B684300D5552C /* SRReadCellView.swift in Sources */,
 				569B21C91F1B67F300D5552C /* SRSpeedCellView.swift in Sources */,
+				32768ECF214785B7006004CB /* CSS.swift in Sources */,
+				32768ED3214785BD006004CB /* Kanna.swift in Sources */,
+				32768ED0214785B9006004CB /* libxmlHTMLDocument.swift in Sources */,
 				569724241F1BE4F900D9E7C7 /* SRTableRowView.swift in Sources */,
 				569B21C11F1B489C00D5552C /* SRPreferencesViewController.swift in Sources */,
 				3741C1C81F0A89E0004E9BE0 /* ReadDetailWindow.swift in Sources */,
-				3206308D21477A4500D27B73 /* EmptyObject.m in Sources */,
 				569B21CD1F1B681100D5552C /* SRAppearanceCellView.swift in Sources */,
 				569B21C51F1B5B6400D5552C /* SRHistoryViewController.swift in Sources */,
 				3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */,
+				32768ECE214785B5006004CB /* libxmlHTMLNode.swift in Sources */,
 				569724281F1BEC4500D9E7C7 /* SRImportWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.luming.SpeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Modules";
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedReader/SpeedReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
@@ -414,7 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.luming.SpeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Modules";
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedReader/SpeedReader-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;

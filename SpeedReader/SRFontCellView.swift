@@ -86,8 +86,9 @@ class SRFontCellView: SRGeneralPrefCellView {
                     if let range = displayName.range(of: familyName) {
                         let endPos = displayName.distance(from: displayName.startIndex, to: range.upperBound)
                         let offsetIndex = endPos.advanced(by: 1)
-                        if displayName.characters.count > endPos {
-                            let variant = displayName.substring(from: displayName.index(displayName.startIndex, offsetBy: offsetIndex))
+                        if displayName.count > endPos {
+                            let index = displayName.index(displayName.startIndex, offsetBy: offsetIndex)
+                            let variant = String(displayName[index...])
                             fontSubFamilyPopUp.selectItem(withTitle: variant)
                         }
 
