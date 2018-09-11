@@ -199,10 +199,13 @@
 				TargetAttributes = {
 					3741C1B41F0A873F004E9BE0 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NFXP8HZZ2G;
+						DevelopmentTeam = 54362BT7G2;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -407,7 +410,8 @@
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = NFXP8HZZ2G;
+				DEVELOPMENT_TEAM = 54362BT7G2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = SpeedReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -431,7 +435,8 @@
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = NFXP8HZZ2G;
+				DEVELOPMENT_TEAM = 54362BT7G2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = SpeedReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
