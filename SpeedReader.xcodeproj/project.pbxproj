@@ -199,7 +199,7 @@
 				TargetAttributes = {
 					3741C1B41F0A873F004E9BE0 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 54362BT7G2;
+						DevelopmentTeam = 3Q7XKEDZ36;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -410,7 +410,7 @@
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 54362BT7G2;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = SpeedReader/Info.plist;
@@ -435,7 +435,7 @@
 				CODE_SIGN_ENTITLEMENTS = SpeedReader/SpeedReader.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 54362BT7G2;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = SpeedReader/Info.plist;
