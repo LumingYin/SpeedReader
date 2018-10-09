@@ -20,4 +20,4 @@ Preferences:
 
 ---
 
-[Download from Github](https://github.com/LumingYin/SpeedReader/releases/download/1.6/SpeedReader_1.6.zip)
+[Download from Github](https://github.com/LumingYin/SpeedReader/releases/download/1.6/SpeedReader.1.6.dmg)
