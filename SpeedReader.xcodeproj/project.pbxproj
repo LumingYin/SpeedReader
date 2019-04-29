@@ -13,6 +13,7 @@
 		32768ED1214785BA006004CB /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768EC921478505006004CB /* libxmlParserOption.swift */; };
 		32768ED2214785BC006004CB /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768ECA21478505006004CB /* Deprecated.swift */; };
 		32768ED3214785BD006004CB /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32768ECC21478505006004CB /* Kanna.swift */; };
+		32EAA8AF2276B4FA0041EB71 /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAA8AE2276B4FA0041EB71 /* ReadView.swift */; };
 		3741C1B91F0A873F004E9BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */; };
 		3741C1BB1F0A873F004E9BE0 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */; };
 		3741C1C01F0A873F004E9BE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3741C1BE1F0A873F004E9BE0 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		32768EC921478505006004CB /* libxmlParserOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libxmlParserOption.swift; sourceTree = "<group>"; };
 		32768ECA21478505006004CB /* Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
 		32768ECC21478505006004CB /* Kanna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanna.swift; sourceTree = "<group>"; };
+		32EAA8AE2276B4FA0041EB71 /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
 		3741C1B51F0A873F004E9BE0 /* SpeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3741C1B81F0A873F004E9BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3741C1BA1F0A873F004E9BE0 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				569724231F1BE4F900D9E7C7 /* SRTableRowView.swift */,
 				3741C1BE1F0A873F004E9BE0 /* Main.storyboard */,
+				32EAA8AE2276B4FA0041EB71 /* ReadView.swift */,
 				569724271F1BEC4500D9E7C7 /* SRImportWebViewController.swift */,
 				569724251F1BEBC200D9E7C7 /* SRModalWindowController.swift */,
 				5697241F1F1BCD1500D9E7C7 /* SRArticleSnippetCellView.swift */,
@@ -274,6 +277,7 @@
 				3741C1C81F0A89E0004E9BE0 /* ReadDetailWindow.swift in Sources */,
 				569B21CD1F1B681100D5552C /* SRAppearanceCellView.swift in Sources */,
 				569B21C51F1B5B6400D5552C /* SRHistoryViewController.swift in Sources */,
+				32EAA8AF2276B4FA0041EB71 /* ReadView.swift in Sources */,
 				3741C1CC1F0A8B25004E9BE0 /* ReadViewController.swift in Sources */,
 				32768ECE214785B5006004CB /* libxmlHTMLNode.swift in Sources */,
 				569724281F1BEC4500D9E7C7 /* SRImportWebViewController.swift in Sources */,

@@ -963,7 +963,7 @@ Gw
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SpeedReader" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="-99"/>
+            <point key="canvasLocation" x="302" y="-244"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -1128,7 +1128,7 @@ Gw
         <scene sceneID="wHM-Jk-H5D">
             <objects>
                 <viewController id="K7E-mp-BrD" customClass="ReadViewController" customModule="SpeedReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="0YF-dt-Ayu">
+                    <view key="view" id="0YF-dt-Ayu" customClass="ReadView" customModule="SpeedReader" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

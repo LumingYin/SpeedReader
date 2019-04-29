@@ -9,7 +9,6 @@
 import Cocoa
 
 class ReadViewController: NSViewController {
-    
     var textToRead: String?
     @IBOutlet weak var displayLabel: NSTextField!
     var readingSliderValue: Float = 1.0
@@ -25,6 +24,12 @@ class ReadViewController: NSViewController {
     @IBOutlet weak var playPauseButton: NSButton!
 
     @IBOutlet weak var visualEffectView: NSVisualEffectView!
+
+    override func awakeFromNib() {
+        if let readView = self.view as? ReadView {
+            readView.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,6 +118,7 @@ class ReadViewController: NSViewController {
             timer?.invalidate()
             isReading = false
         } else {
+            isReading = true
             playPauseButton.image = NSImage(named: "pauseButtonArtwork")
             runTimer()
         }
@@ -147,6 +153,25 @@ class ReadViewController: NSViewController {
                 timer.invalidate()
                 self.view.window?.close()
             }
+        })
+    }
+
+    func enteredHandler(with event: NSEvent) {
+        self.playPauseButton.alphaValue = 0
+        playPauseButton.isHidden = false
+        NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) in
+            context.duration = 0.2
+            self.playPauseButton.animator().alphaValue = 1.0
+        }, completionHandler: {
+        })
+    }
+
+    func exitedHandler(with event: NSEvent) {
+        NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) in
+            context.duration = 0.2
+            self.playPauseButton.animator().alphaValue = 0
+        }, completionHandler: {
+            self.playPauseButton.isHidden = true
         })
     }
     
