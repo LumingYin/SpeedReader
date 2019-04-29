@@ -16,6 +16,7 @@ class ReadDetailWindow: NSWindowController {
         self.window?.titleVisibility = NSWindow.TitleVisibility.hidden;
         self.window?.titlebarAppearsTransparent = true;
         self.window?.styleMask.insert(.fullSizeContentView)
+        self.window?.isMovableByWindowBackground = true
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
