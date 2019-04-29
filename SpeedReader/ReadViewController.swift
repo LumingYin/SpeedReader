@@ -136,24 +136,29 @@ class ReadViewController: NSViewController {
         }
     }
 
+    func timerInsideHandler() {
+        if (self.currentIndexInArray < self.arrayText.count) {
+            self.isReading = true
+            var pendingString = ""
+            for i in 0..<self.localWordsPerRoll {
+                if self.currentIndexInArray + i < self.arrayText.count {
+                    pendingString = pendingString + self.arrayText[self.currentIndexInArray + i] + " "
+                }
+            }
+            self.displayLabel?.stringValue = pendingString
+            self.currentIndexInArray = self.currentIndexInArray + self.localWordsPerRoll
+        } else {
+            self.isReading = false
+            timer?.invalidate()
+            self.view.window?.close()
+        }
+    }
+
     func runTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1 - readingSliderValue), repeats: true, block: { (timer) in
-            if (self.currentIndexInArray < self.arrayText.count) {
-                self.isReading = true
-                var pendingString = ""
-                for i in 0..<self.localWordsPerRoll {
-                    if self.currentIndexInArray + i < self.arrayText.count {
-                        pendingString = pendingString + self.arrayText[self.currentIndexInArray + i] + " "
-                    }
-                }
-                self.displayLabel?.stringValue = pendingString
-                self.currentIndexInArray = self.currentIndexInArray + self.localWordsPerRoll
-            } else {
-                self.isReading = false
-                timer.invalidate()
-                self.view.window?.close()
-            }
+            self.timerInsideHandler()
         })
+        self.timerInsideHandler()
     }
 
     func enteredHandler(with event: NSEvent) {

@@ -50,6 +50,8 @@ class MainWindowController: NSWindowController, NSSharingServicePickerDelegate {
                         readVC.articlePreference = article.preference
                         if let speed = article.preference?.speed {
                             readVC.readingSliderValue = speed
+                        } else {
+                            readVC.readingSliderValue = 0.7
                         }
                         readVC.textToRead = textVC.contentTextView.string
                         if let font = article.preference?.font as? NSFont {

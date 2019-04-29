@@ -47,6 +47,9 @@ class SRSpeedCellView: SRGeneralPrefCellView {
         }
         if let speed = delegate?.article?.preference?.speed {
             slider.floatValue = speed
+        } else {
+            slider.floatValue = 0.82
+            delegate?.article?.preference?.speed = 0.82
         }
     }
 

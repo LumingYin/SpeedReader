@@ -72,7 +72,7 @@ class SRFontCellView: SRGeneralPrefCellView {
         updateSubFamily()
         fontSizeComboBox.removeAllItems()
         fontSizeComboBox.addItems(withObjectValues: allFontSizes)
-        fontSizeComboBox.selectItem(at: 2)
+        fontSizeComboBox.stringValue = "\(Int(self.delegate?.article?.preference?.fontSize ?? 24))"
         
         if let chosenFont = self.delegate?.article?.preference?.font as? NSFont {
 //            Swift.print("\(chosenFont)")
