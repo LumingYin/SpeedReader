@@ -118,7 +118,6 @@ class ReadViewController: NSViewController {
         calculateReadingSpeed()
         if let text = textToRead {
             arrayText = text.stringTokens(splitMarks: [",","."," ","!",":","/","-","\n"])
-//            arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
             arrayText = arrayText.filter {
                 $0 != ""
             }
@@ -155,12 +154,11 @@ extension String {
 
         var string = ""
         var desiredOutput = [String]()
-        for ch in self.characters {
+        for ch in self {
             if splitMarks.contains(String(ch)) {
                 if !string.isEmpty {
                     desiredOutput.append("\(string)\(ch)")
                 }
-//                desiredOutput.append(String(ch))
                 string = ""
             }
             else {
