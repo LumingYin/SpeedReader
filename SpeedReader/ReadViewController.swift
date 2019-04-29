@@ -9,7 +9,6 @@
 import Cocoa
 
 class ReadViewController: NSViewController {
-    
     var textToRead: String?
     @IBOutlet weak var displayLabel: NSTextField!
     var readingSliderValue: Float = 1.0
@@ -22,8 +21,15 @@ class ReadViewController: NSViewController {
     var article: Article?
     var articlePreference: Preference?
     var localWordsPerRoll: Int = 1
-    
+    @IBOutlet weak var playPauseButton: NSButton!
+
     @IBOutlet weak var visualEffectView: NSVisualEffectView!
+
+    override func awakeFromNib() {
+        if let readView = self.view as? ReadView {
+            readView.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,7 @@ class ReadViewController: NSViewController {
         if let _ = font {
             self.displayLabel.font = font
         }
+        playPauseButton.image = NSImage(named: "pauseButtonArtwork")
     }
     
     override func viewWillAppear() {
@@ -101,32 +108,99 @@ class ReadViewController: NSViewController {
         readingSpeed = UInt32(10.0/readingSliderValue) * UInt32(ms)
         
     }
-    
+
+    var timer: Timer?
+    var isReading = false
+
+    @IBAction func playPauseClicked(_ sender: Any) {
+        if isReading {
+            playPauseButton.image = NSImage(named: "playButtonArtwork")
+            timer?.invalidate()
+            isReading = false
+        } else {
+            isReading = true
+            playPauseButton.image = NSImage(named: "pauseButtonArtwork")
+            runTimer()
+        }
+    }
+
     func startReading() {
         calculateReadingSpeed()
         if let text = textToRead {
-            arrayText = text.components(separatedBy: CharacterSet.init(charactersIn: ",. !:/-\n"))
+            arrayText = text.stringTokens(splitMarks: [",","."," ","!",":","/","-","\n"])
             arrayText = arrayText.filter {
                 $0 != ""
             }
             currentIndexInArray = 0
-            
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(1 - readingSliderValue), repeats: true, block: { (timer) in
-                if (self.currentIndexInArray < self.arrayText.count) {
-                    var pendingString = ""
-                    for i in 0..<self.localWordsPerRoll {
-                        if self.currentIndexInArray + i < self.arrayText.count {
-                            pendingString = pendingString + self.arrayText[self.currentIndexInArray + i] + " "
-                        }
-                    }
-                    self.displayLabel?.stringValue = pendingString
-                    self.currentIndexInArray = self.currentIndexInArray + self.localWordsPerRoll
-                } else {
-                    timer.invalidate()
-                    self.view.window?.close()
-                }
-            })
+            runTimer()
         }
     }
+
+    func runTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1 - readingSliderValue), repeats: true, block: { (timer) in
+            if (self.currentIndexInArray < self.arrayText.count) {
+                self.isReading = true
+                var pendingString = ""
+                for i in 0..<self.localWordsPerRoll {
+                    if self.currentIndexInArray + i < self.arrayText.count {
+                        pendingString = pendingString + self.arrayText[self.currentIndexInArray + i] + " "
+                    }
+                }
+                self.displayLabel?.stringValue = pendingString
+                self.currentIndexInArray = self.currentIndexInArray + self.localWordsPerRoll
+            } else {
+                self.isReading = false
+                timer.invalidate()
+                self.view.window?.close()
+            }
+        })
+    }
+
+    func enteredHandler(with event: NSEvent) {
+        self.playPauseButton.alphaValue = 0
+        playPauseButton.isHidden = false
+        NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) in
+            context.duration = 0.2
+            self.playPauseButton.animator().alphaValue = 1.0
+        }, completionHandler: {
+        })
+    }
+
+    func exitedHandler(with event: NSEvent) {
+        NSAnimationContext.runAnimationGroup({ (context: NSAnimationContext) in
+            context.duration = 0.2
+            self.playPauseButton.animator().alphaValue = 0
+        }, completionHandler: {
+            self.playPauseButton.isHidden = true
+        })
+    }
     
+}
+
+extension String {
+
+    func stringTokens(splitMarks: Set<String>) -> [String] {
+
+        var string = ""
+        var desiredOutput = [String]()
+        for ch in self {
+            if splitMarks.contains(String(ch)) {
+                if !string.isEmpty {
+                    if ch != " " {
+                        desiredOutput.append("\(string)\(ch)")
+                    } else {
+                        desiredOutput.append("\(string)")
+                    }
+                }
+                string = ""
+            }
+            else {
+                string += String(ch)
+            }
+        }
+        if !string.isEmpty {
+            desiredOutput.append(string)
+        }
+        return desiredOutput
+    }
 }
