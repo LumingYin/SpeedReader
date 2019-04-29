@@ -43,7 +43,7 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
             if increaseContrast {
                 increaseContrastBtn.state = .on
             } else {
-                increaseContrastBtn.state = .on
+                increaseContrastBtn.state = .off
             }
         }
 
@@ -51,7 +51,7 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
             if reduceTransparency {
                 reduceTransparencyBtn.state = .on
             } else {
-                reduceTransparencyBtn.state = .on
+                reduceTransparencyBtn.state = .off
             }
         }
 
@@ -89,7 +89,7 @@ class SRAppearanceCellView: SRGeneralPrefCellView {
             if (disclosureTriangle.state == .on) {
                 disclosureTriangle.state = .on
             } else {
-                disclosureTriangle.state = .on
+                disclosureTriangle.state = .off
             }
         }
 
