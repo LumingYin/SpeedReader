@@ -1144,8 +1144,12 @@ Gw
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-35-RyC">
-                                        <rect key="frame" x="202" y="13" width="77" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uZt-eS-MJj">
+                                        <rect key="frame" x="225" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="5AW-rC-qdd"/>
+                                            <constraint firstAttribute="height" constant="30" id="fjj-I3-Ens"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="uZt-eS-MJj">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -1244,7 +1248,7 @@ Gw
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oei-jA-6aR">
-                                                    <rect key="frame" x="264.5" y="173" width="43" height="23"/>
+                                                    <rect key="frame" x="265" y="173" width="42" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="hV8-gu-pei"/>
                                                     </constraints>
@@ -1753,7 +1757,7 @@ Gw
                                                                             </connections>
                                                                         </button>
                                                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-HY-erm">
-                                                                            <rect key="frame" x="14.5" y="60" width="221" height="23"/>
+                                                                            <rect key="frame" x="15" y="60" width="220" height="23"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="iyK-0Q-Lx7">
                                                                                 <font key="font" metaFont="system"/>
@@ -1861,7 +1865,7 @@ Gw
                                                                             </connections>
                                                                         </button>
                                                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ij-oa-0rK">
-                                                                            <rect key="frame" x="15.5" y="12" width="220" height="23"/>
+                                                                            <rect key="frame" x="16" y="12" width="219" height="23"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="XAR-w1-X7W">
                                                                                 <font key="font" metaFont="system"/>
@@ -1889,7 +1893,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-la-blm">
-                                                                            <rect key="frame" x="14.5" y="13" width="218" height="25"/>
+                                                                            <rect key="frame" x="15" y="13" width="217" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="roundTextured" title=" Begin Speed Read" bezelStyle="texturedRounded" image="NSSlideshowTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eyu-Is-kOG">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

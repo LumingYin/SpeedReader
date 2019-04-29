@@ -33,6 +33,7 @@ class ReadViewController: NSViewController {
         if let _ = font {
             self.displayLabel.font = font
         }
+        playPauseButton.image = NSImage(named: "pauseButtonArtwork")
     }
     
     override func viewWillAppear() {
@@ -108,11 +109,11 @@ class ReadViewController: NSViewController {
 
     @IBAction func playPauseClicked(_ sender: Any) {
         if isReading {
-            playPauseButton.title = "Continue"
+            playPauseButton.image = NSImage(named: "playButtonArtwork")
             timer?.invalidate()
             isReading = false
         } else {
-            playPauseButton.title = "Pause"
+            playPauseButton.image = NSImage(named: "pauseButtonArtwork")
             runTimer()
         }
     }
@@ -160,7 +161,11 @@ extension String {
         for ch in self {
             if splitMarks.contains(String(ch)) {
                 if !string.isEmpty {
-                    desiredOutput.append("\(string)\(ch)")
+                    if ch != " " {
+                        desiredOutput.append("\(string)\(ch)")
+                    } else {
+                        desiredOutput.append("\(string)")
+                    }
                 }
                 string = ""
             }
