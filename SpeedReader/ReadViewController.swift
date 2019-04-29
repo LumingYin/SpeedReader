@@ -22,7 +22,8 @@ class ReadViewController: NSViewController {
     var article: Article?
     var articlePreference: Preference?
     var localWordsPerRoll: Int = 1
-    
+    @IBOutlet weak var playPauseButton: NSButton!
+
     @IBOutlet weak var visualEffectView: NSVisualEffectView!
     
     override func viewDidLoad() {
@@ -107,9 +108,11 @@ class ReadViewController: NSViewController {
 
     @IBAction func playPauseClicked(_ sender: Any) {
         if isReading {
+            playPauseButton.title = "Continue"
             timer?.invalidate()
             isReading = false
         } else {
+            playPauseButton.title = "Pause"
             runTimer()
         }
     }

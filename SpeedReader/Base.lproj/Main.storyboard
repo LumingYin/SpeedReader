@@ -1143,9 +1143,8 @@ Gw
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-35-RyC">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-35-RyC">
                                         <rect key="frame" x="202" y="13" width="77" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uZt-eS-MJj">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1157,6 +1156,8 @@ Gw
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BWH-iC-9Lp" firstAttribute="centerX" secondItem="zs4-Dj-5VI" secondAttribute="centerX" id="0UD-Ze-Ubl"/>
+                                    <constraint firstAttribute="bottom" secondItem="nK1-35-RyC" secondAttribute="bottom" constant="20" id="MyM-23-P3u"/>
+                                    <constraint firstItem="nK1-35-RyC" firstAttribute="centerX" secondItem="zs4-Dj-5VI" secondAttribute="centerX" id="S0A-F1-aaX"/>
                                     <constraint firstItem="BWH-iC-9Lp" firstAttribute="centerY" secondItem="zs4-Dj-5VI" secondAttribute="centerY" id="dhY-WR-fGU"/>
                                 </constraints>
                             </visualEffectView>
@@ -1170,6 +1171,7 @@ Gw
                     </view>
                     <connections>
                         <outlet property="displayLabel" destination="BWH-iC-9Lp" id="3W8-xL-WmI"/>
+                        <outlet property="playPauseButton" destination="nK1-35-RyC" id="Tc0-RF-eTk"/>
                         <outlet property="visualEffectView" destination="zs4-Dj-5VI" id="5yz-h8-hDU"/>
                     </connections>
                 </viewController>
